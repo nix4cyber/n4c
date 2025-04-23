@@ -30,3 +30,9 @@ curl -s $url/robots.txt
 ```bash
 gobuster dir -u $url -w $wordlist -t 50
 ```
+
+### Spider
+
+```bash
+katana -c 15 -p 15 -u $target > output
+```

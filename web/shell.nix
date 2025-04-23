@@ -21,6 +21,7 @@ let
     whois
     sqlmap
     burpsuite
+    katana
     jq
     httrack
     ffuf

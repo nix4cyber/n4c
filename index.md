@@ -16,7 +16,7 @@ Nix 4 cyber is a collection of tools and scripts to help you with your cyber sec
 To use Nix 4 cyber, you need to have Nix installed on your system. You can then navigate to the desired category and start the shell with the following command:
 
 ```bash
-nix develop --no-write-lock-file --refresh github:anotherhadi/n4c#<category>
+nix develop --refresh github:anotherhadi/n4c#<category>
 ```
 
 Categories include "all" or one of "osint", "web", "wifi". For example, to start the OSINT environment, you would run:
@@ -27,7 +27,7 @@ Add the following in your shell config:
 
 ```bash
 function n4c() {
-    nix develop --no-write-lock-file --refresh "github:anotherhadi/n4c#${1:-all}" # Escape the $ with ''$ in nix
+    nix develop --refresh "github:anotherhadi/n4c#${1:-all}" # Escape the $ with ''$ in nix
 }
 ```
 

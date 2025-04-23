@@ -1,0 +1,55 @@
+{
+  # https://github.com/anotherhadi/nix4cyber
+  description = "nix4cyber";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
+  outputs = { self, nixpkgs, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      utils = import ./utils.nix { inherit pkgs; };
+
+      # Automatically detect directories containing shell.nix files
+      isDirectory = path: builtins.pathExists (path + "/shell.nix");
+
+      # Get a list of all entries in the repo root
+      allEntries = builtins.attrNames (builtins.readDir ./.);
+
+      # Filter to only include directories that have a shell.nix file
+      dirs = builtins.filter (dir:
+        builtins.pathExists (./. + "/${dir}/shell.nix")
+        && builtins.isAttrs (builtins.readDir (./. + "/${dir}"))) allEntries;
+
+      loadShell = name: {
+        inherit name;
+        value = import ./${name}/shell.nix {
+          inherit pkgs;
+          inherit utils;
+        };
+      };
+
+      shells = builtins.listToAttrs (map loadShell dirs);
+      allBuildInputs = builtins.concatLists (map (name:
+        (import ./${name}/shell.nix {
+          inherit pkgs;
+          inherit utils;
+        }).nativeBuildInputs or [ ]) dirs);
+      combineShellHooks = builtins.concatStringsSep "\n" (map (name:
+        let
+          shell = import ./${name}/shell.nix {
+            inherit pkgs;
+            inherit utils;
+          };
+        in shell.shellHook or "") dirs);
+    in {
+      lib = { inherit utils; };
+      devShells.${system} = shells // {
+        all = pkgs.mkShell {
+          nativeBuildInputs = allBuildInputs;
+          shellHook = combineShellHooks;
+        };
+      };
+    };
+}

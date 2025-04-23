@@ -36,8 +36,7 @@ parent: osint
 | IP | [Shodan](https://www.shodan.io/) |
 | Name | [Webmii](https://webmii.com/) |
 | SSID | [Wigle](https://wigle.net/) |
-| Image | [Zoomeye](https://www.zoomeye.org/) |
-| | [PimEyes](https://pimeyes.com/) |
+| Image | [PimEyes](https://pimeyes.com/) |
 | | [TinEye](https://tineye.com) |
 | | [Pic2Map (exif geolocation)](https://www.pic2map.com/) |
 | Email | [DeHashed](https://dehashed.com/search) |

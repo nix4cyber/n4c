@@ -1,5 +1,5 @@
 {
-  # https://github.com/anotherhadi/nix4cyber
+  # https://github.com/nix4cyber/nix4cyber
   description = "nix4cyber";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
   outputs = { self, nixpkgs, ... }:

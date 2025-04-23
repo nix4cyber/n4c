@@ -2,13 +2,13 @@ title: Nix 4 Cyber
 description:  Nix 4 cyber is a collection of tools and scripts to help you with your cyber security tasks. 
 theme: just-the-docs
 
-url: https://anotherhadi.github.io/n4c
+url: https://nix4cyber.github.io/n4c
 logo: "/assets/logo-large.png"
 favicon_ico: "/assets/favicon.ico"
 
 aux_links:
   N4C on Github:
-    - https://github.com/anotherhadi/n4c
+    - https://github.com/nix4cyber/n4c
 
 
 footer_content: "Copyright &copy; 2025 - Nix4Cyber."
@@ -20,7 +20,7 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub."
-gh_edit_repository: "https://github.com/anotherhadi/nix4cyber"
+gh_edit_repository: "https://github.com/nix4cyber/nix4cyber"
 gh_edit_branch: "main" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 

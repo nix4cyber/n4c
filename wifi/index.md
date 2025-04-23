@@ -24,5 +24,5 @@ The shell contains all the tools needed to perform the attack category & wordlis
 **Start the shell with the following command:**
 
 ```bash
-nix develop --refresh github:anotherhadi/n4c#wifi
+nix develop --refresh github:nix4cyber/n4c#wifi
 ```

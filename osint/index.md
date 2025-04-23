@@ -14,5 +14,5 @@ The shell contains all the tools & files needed to perform the attack category.
 **Start the shell with the following command:**
 
 ```bash
-nix develop --refresh github:anotherhadi/n4c#osint
+nix develop --refresh github:nix4cyber/n4c#osint
 ```

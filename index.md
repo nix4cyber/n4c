@@ -4,7 +4,7 @@ layout: home
 ---
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/anotherhadi/n4c/main/assets/logo.png" width="120px" />
+    <img src="https://raw.githubusercontent.com/nix4cyber/n4c/main/assets/logo.png" width="120px" />
 </div>
 
 # Nix 4 cyber
@@ -16,7 +16,7 @@ Nix 4 cyber is a collection of tools and scripts to help you with your cyber sec
 To use Nix 4 cyber, you need to have Nix installed on your system. You can then navigate to the desired category and start the shell with the following command:
 
 ```bash
-nix develop --refresh github:anotherhadi/n4c#<category>
+nix develop --refresh github:nix4cyber/n4c#<category>
 ```
 
 Categories include "all" or one of "osint", "web", "wifi". For example, to start the OSINT environment, you would run:
@@ -27,7 +27,7 @@ Add the following in your shell config:
 
 ```bash
 function n4c() {
-    nix develop --refresh "github:anotherhadi/n4c#${1:-all}" # Escape the $ with ''$ in nix
+    nix develop --refresh "github:nix4cyber/n4c#${1:-all}" # Escape the $ with ''$ in nix
 }
 ```
 

@@ -17,12 +17,3 @@ The shell contains all the tools & files needed to perform the attack category.
 ```bash
 nix develop --refresh github:nix4cyber/n4c#cracking
 ```
-
-- hashid
-- cyberchef
-- hashcat
-- john
-- crackstation
-- Hydra
-- Medusa
-- Cain and Abel

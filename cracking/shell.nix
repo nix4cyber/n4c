@@ -8,7 +8,7 @@ in pkgs.mkShell {
   nativeBuildInputs = packages;
 
   shellHook = ''
-    ${utils.printHeader "Example"}
+    ${utils.printHeader "Cracking"}
     ${utils.linkSources sources}
     ${utils.printPackageList packages}
   '';

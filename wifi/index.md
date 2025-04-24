@@ -3,7 +3,7 @@ title: wifi
 layout: page
 ---
 
-# Wifi
+# 🛜 Wifi
 
 Wifi attacks are a category of attacks that target wireless networks. These attacks can be used to gain unauthorized access to a network, intercept data, or disrupt network services. Some common wifi attacks include:
 
@@ -17,7 +17,7 @@ Wifi attacks are a category of attacks that target wireless networks. These atta
 
 - Other Exploits : Default credentials, firmware vulnerabilities (RCE/ACE), etc.
 
-## Shell
+## 🐚 Shell
 
 The shell contains all the tools needed to perform the attack category & wordlists.
 

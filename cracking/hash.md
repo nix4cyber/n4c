@@ -19,7 +19,7 @@ parent: cracking
 
 ## Hash identification
 
-### **Hashid**
+### Hashid
 
 You can identify what type of hash you are dealing with using the `hashid` tool. It is a Python script that can identify over 200 different types of hashes.
 

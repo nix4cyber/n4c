@@ -19,7 +19,7 @@ parent: osint
 
 ## Visualisation
 
-Use [OSINTracker](https://www.osintracker.com/) to visualise your findings.
+Use [OSINTracker](https://app.osintracker.com/) to visualise your findings.
 It allows you to create a graph of your findings, which can help you see connections and relationships between different pieces of information.
 
 ## Forgotten passwords
@@ -28,5 +28,5 @@ To find email addresses and phone numbers associated with an account, you can cl
 
 ## Archive Search
 
-- **Wayback Machine** (web.archive.org) stores over 618 billion web captures, accessible at <https://web.archive.org> to view site history  
-- **Archive.today** (archive.ph) creates on-demand snapshots, including for JS-heavy sites, with both a functional page and screenshot version  
+- **Wayback Machine** (<https://web.archive.org>) stores over 618 billion web captures
+- **Archive.today** (<https://archive.ph>) creates on-demand snapshots, including for JS-heavy sites, with both a functional page and screenshot version  

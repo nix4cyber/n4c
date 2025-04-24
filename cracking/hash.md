@@ -19,9 +19,9 @@ parent: cracking
 
 ## Hash identification
 
-### Hashid
+### **Hashid**
 
-**You can identify what type of hash you are dealing with using the `hashid` tool. It is a Python script that can identify over 200 different types of hashes.**
+You can identify what type of hash you are dealing with using the `hashid` tool. It is a Python script that can identify over 200 different types of hashes.
 
 ```bash
 hashid <hash>
@@ -48,7 +48,7 @@ CyberChef can also be used to create hashes of different types.
 
 ### Hashcat
 
-**[Hashcat](https://hashcat.net/hashcat/) is a password recovery tool that can crack hashes using various methods, including brute force, dictionary attacks, and rule-based attacks. It supports a wide range of hash types and is highly optimized for performance.**
+[Hashcat](https://hashcat.net/hashcat/) is a password recovery tool that can crack hashes using various methods, including brute force, dictionary attacks, and rule-based attacks. It supports a wide range of hash types and is highly optimized for performance.
 
 ```bash
 hashcat -m <hash_type> -a <attack_mode> <hash_file> [wordlist]
@@ -84,8 +84,12 @@ john --format=<hash_type> --wordlist=<wordlist> <hash_file>
 john --mask="?d?d?d?d" passwords.txt
 ```
 
+This command will try to crack the password using a mask attack with 4 digits.
+
 ```bash
 john --format=md5 --wordlist=rockyou.txt --rules passwords.txt
 ```
+
+This command will try to crack the password (which is md5 hash) using the rockyou.txt wordlist and applying rules to modify the words in the list.
 
 ### Ophcrack

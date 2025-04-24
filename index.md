@@ -27,7 +27,7 @@ Add the following in your shell config:
 
 ```bash
 function n4c() {
-    nix develop --refresh "github:nix4cyber/n4c#${1:-all}" # Escape the $ with ''$ in nix
+    nix develop --refresh "github:nix4cyber/n4c#${1:-all}" # -c zsh # Escape the $ with ''$ in nix
 }
 ```
 

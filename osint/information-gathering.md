@@ -27,6 +27,7 @@ parent: osint
 | Username | `sherlock <username>` |
 | Image | `exiftool <image>` |
 | Instagram | `instaloader profile <username>` |
+| Github | `trufflehog github --org=<username,org>` |
 
 ## Online tools
 

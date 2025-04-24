@@ -10,6 +10,7 @@ let
     curl
     instaloader
     recon-ng
+    trufflehog
   ];
 in pkgs.mkShell {
   nativeBuildInputs = packages;

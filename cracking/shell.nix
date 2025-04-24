@@ -2,7 +2,7 @@
 let
   sources = [ ];
 
-  packages = with pkgs; [ ];
+  packages = with pkgs; [ hashid cyberchef hashcat hashcat-utils john ];
 
 in pkgs.mkShell {
   nativeBuildInputs = packages;

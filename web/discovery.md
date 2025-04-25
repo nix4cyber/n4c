@@ -25,6 +25,12 @@ parent: web
 curl -s $url/robots.txt
 ```
 
+### Dirb
+
+```bash
+dirb $url
+```
+
 ### Go buster
 
 ```bash

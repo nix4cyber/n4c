@@ -18,6 +18,7 @@ let
 
   packages = with pkgs; [
     gobuster
+    dirb
     whois
     sqlmap
     burpsuite

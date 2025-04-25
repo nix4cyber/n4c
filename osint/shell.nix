@@ -9,7 +9,6 @@ let
     theharvester
     curl
     instaloader
-    recon-ng
     trufflehog
   ];
 in pkgs.mkShell {

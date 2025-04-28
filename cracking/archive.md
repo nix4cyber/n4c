@@ -21,7 +21,7 @@ parent: cracking
 
 ### Fcrackzip
 
-*fcrackzip* searches each given zipfile for encrypted files and tries to obtain the password. All files must be encrypted with the same password, and the more files you provide, the better.
+fcrackzip searches each given zipfile for encrypted files and tries to obtain the password. All files must be encrypted with the same password, and the more files you provide, the better.
 
 ```bash
 fcrackzip -u -D -p [wordlist] [ZIP file]

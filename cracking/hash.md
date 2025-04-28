@@ -96,5 +96,5 @@ This command will try to crack the password (which is md5 hash) using a wordlist
 
 ### Crackstation
 
-[Crackstation](https://crackstation.net/) is a free online hash cracking service that can crack various hash types using a large database of precomputed hashes. It is useful for quickly cracking hashes without the need to set up your own cracking environment.
+[Crackstation](https://crackstation.net/) is a free online hash cracking service that can obtain the passwords of various hash types by using a large database of precomputed hashes. It is useful for quickly cracking hashes without the need to set up your own cracking environment.
 Recommended for beginner users or for quick tests.

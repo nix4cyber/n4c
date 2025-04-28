@@ -17,11 +17,11 @@ parent: wifi
 
 ---
 
-## Setup
-
-### Disclaimer
+## Disclaimer
 
 This is for educational purposes only. Do not use this information for illegal activities. Always get permission before testing any network.
+
+## Setup
 
 ### Monitor mode
 

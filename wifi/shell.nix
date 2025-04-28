@@ -2,10 +2,10 @@
 let
   sources = [
     (pkgs.fetchFromGitHub {
-      owner = "bryanmcnulty";
-      repo = "ctf-wordlists";
+      owner = "nix4cyber";
+      repo = "wordlists";
       rev = "main";
-      sha256 = "sha256-nquxaghw6ayX2FM0RpAXEUF+0WXntKzNxmCLckiGWyQ=";
+      sha256 = "sha256-ci2JtBAhqCYPbMDJWiZkQeqn1grLyNn+ZEVmSLhxOQE=";
     })
   ];
 

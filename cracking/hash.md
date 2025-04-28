@@ -27,13 +27,13 @@ You can identify what type of hash you are dealing with using the `haiti` tool. 
 haiti <hash>
 ```
 
-You can also use the `--hashcat-only` flag to show the corresponding Hashcat mode for the hash.
+You can also use the `--hashcat-only` flag to only show the corresponding Hashcat mode for the hash.
 
 ```bash
 hashid --hashcat-only '$1$sAdr$A419uwu583q743wllMkpo2'
 ```
 
-Or you can use the `--john-only` flag to show the corresponding John the Ripper format for the hash.
+Or you can use the `--john-only` flag to only show the corresponding John the Ripper format for the hash.
 
 ```bash
 hashid --john-only '$1$sAdr$A419uwu583q743wllMkpo2'

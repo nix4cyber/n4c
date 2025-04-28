@@ -1,8 +1,8 @@
 {
-  # https://github.com/nix4cyber/nix4cyber
+  # https://github.com/nix4cyber/n4c
   description = "nix4cyber";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
-  outputs = { self, nixpkgs, ... }:
+  outputs = { nixpkgs, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

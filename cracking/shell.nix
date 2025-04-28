@@ -15,7 +15,15 @@ let
     })
   ];
 
-  packages = with pkgs; [ hashid cyberchef hashcat hashcat-utils john ];
+  packages = with pkgs; [
+    haiti
+    cyberchef
+    hashcat
+    hashcat-utils
+    john
+    thc-hydra
+    medusa
+  ];
 
 in pkgs.mkShell {
   nativeBuildInputs = packages;

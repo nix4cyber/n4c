@@ -28,7 +28,7 @@ fcrackzip -u -D -p [wordlist] [ZIP file]
 ```
 
 ```bash
-fcrackzip -u -D -p ~/rockyou.txt ~/file.zip
+fcrackzip -u -D -p /tmp/wordlists/passwords/password.txt ~/file.zip
 ```
 
 The `-u` flag will try to decompress the first file by calling unzip with the guessed password. This weeds out false positives when not enough files have been given.
@@ -39,10 +39,10 @@ The `-p` flag will set initial (starting) password for brute-force searching to 
 fcrackzip -c a -p aaaaaa sample.zip
 ```
 
-Checks the encrypted files in sample.zip for all lowercase 6 character passwords (aaaaaa ... abaaba ... ghfgrg ... zzzzzz).
+Checks the encrypted files in sample.zip for all lowercase 6 character passwords in the first place.
 
 ```bash
-       fcrackzip --method cpmask --charset A --init AAAA test.ppm
+fcrackzip --method cpmask --charset A --init AAAA test.ppm
 ```
 
 Checks the obscured image test.ppm for all four character passwords.

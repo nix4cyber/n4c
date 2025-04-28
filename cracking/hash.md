@@ -30,13 +30,13 @@ haiti <hash>
 You can also use the `--hashcat-only` flag to only show the corresponding Hashcat mode for the hash.
 
 ```bash
-hashid --hashcat-only '$1$sAdr$A419uwu583q743wllMkpo2'
+haiti --hashcat-only '$1$sAdr$A419uwu583q743wllMkpo2'
 ```
 
 Or you can use the `--john-only` flag to only show the corresponding John the Ripper format for the hash.
 
 ```bash
-hashid --john-only '$1$sAdr$A419uwu583q743wllMkpo2'
+haiti --john-only '$1$sAdr$A419uwu583q743wllMkpo2'
 ```
 
 ### Cyberchef
@@ -56,19 +56,21 @@ hashcat -m <hash_type> -a <attack_mode> <hash_file> [wordlist]
 
 Additionally, you can use different flags and options to customize the attack. For example, you can use the `-r` flag to specify a rule file (only works with the dictionary attack), or the `-w` flag to set the workload profile (up to 4, where 4 is the highest and most aggressive). You can also use the `-O` flag to enable optimized kernel, which can speed up the cracking process for certain hash types but has limits with bigger passwords and can sometimes slow the cracking down. Finally, you can also use `--opencl-device-types 1,2` to use both your CPU and your GPU for cracking.
 
-**Below is an example of a command to crack a hash (from [hashcat's example hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)) using Hashcat and with various arguments:**
+Below is an example of a command to crack a hash (from [hashcat's example hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)) using Hashcat and with various arguments:
 
 ```bash
 hashcat -m 500 -o result.txt --potfile-disable -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --username "administrator:\$1\$28772684\$iEwNOgGugqO9.bIz5sk8k/" /tmp/wordlists/passwords/password.txt -w 4 --opencl-device-types 1,2 
 ```
 
-What's best to do is to test different combinations of arguments in the first running seconds to see how you can get the best performance out of your machine for this specific hash type.
+What's best to do is to test different combinations of arguments in the first running seconds to see how you can get the best performance out of your machine for this specific hash type. As you can also see you can specify the hash directly or use its path in the example above this one.
 
-- **Bruteforce example:**
+- Bruteforce example:
 
 ```bash
-hashcat -m 500 hash.txt -a  3  ?1?1?1?1?1?1?1?1 --increment -1 ?l?d?u
+hashcat -m 500 hash.txt -a 3 ?1?1?1?1?1?1?1?1 --increment -1 ?l?d?u
 ```
+
+This command will try to crack the password using a brute-force attack with 8 characters, using lowercase letters, digits, and uppercase letters, as we can see with the ?l?d?u which are associated to the ?1 in the command.
 
 ### John the Ripper
 
@@ -78,19 +80,19 @@ hashcat -m 500 hash.txt -a  3  ?1?1?1?1?1?1?1?1 --increment -1 ?l?d?u
 john --format=<hash_type> --wordlist=<wordlist> <hash_file>
 ```
 
-- **Examples** :
+- Examples:
 
 ```bash
 john --mask="?d?d?d?d" passwords.txt
 ```
 
-This command will try to crack the password using a mask attack with 4 digits.
+This command will try to crack the password using a mask attack with 4 digits, ?d representing a digit in the mask.
 
 ```bash
-john --format=md5 --wordlist=rockyou.txt --rules passwords.txt
+john --format=md5 --wordlist=/tmp/wordlists/passwords/password.txt --rules passwords.txt
 ```
 
-This command will try to crack the password (which is md5 hash) using the rockyou.txt wordlist and applying rules to modify the words in the list.
+This command will try to crack the password (which is md5 hash) using a wordlist and applying rules to modify the words in the list.
 
 ### Crackstation
 

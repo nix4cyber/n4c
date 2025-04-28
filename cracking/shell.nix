@@ -23,6 +23,10 @@ let
     john
     thc-hydra
     medusa
+    fcrackzip
+    zip2hashcat
+    rar2hashcat
+    _7z2hashcat
   ];
 
 in pkgs.mkShell {

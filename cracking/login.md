@@ -33,7 +33,7 @@ The uppercase flags are to be used when you want to use a list (when you don't k
 - Basic HTTP auth :
 
 ```bash
-hydra -C wordlist.txt TARGET_IP -s PORT http-get /
+hydra -L /tmp/wordlists/usernames/http_default_users.txt -P /tmp/wordlists/passwords/password.txt -u -f TARGET_IP -s PORT http-get /
 ```
 
 - SSH :

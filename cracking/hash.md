@@ -19,24 +19,24 @@ parent: cracking
 
 ## Hash identification
 
-### Hashid
+### Haiti
 
-You can identify what type of hash you are dealing with using the `hashid` tool. It is a Python script that can identify over 200 different types of hashes.
+You can identify what type of hash you are dealing with using the `haiti` tool. It is a Ruby script that can identify over 600 different types of hashes.
 
 ```bash
-hashid <hash>
+haiti <hash>
 ```
 
-You can also use the `-m` flag to show the corresponding Hashcat mode for the hash.
+You can also use the `--hashcat-only` flag to show the corresponding Hashcat mode for the hash.
 
 ```bash
-hashid -m '$1$sAdr$A419uwu583q743wllMkpo2'
+hashid --hashcat-only '$1$sAdr$A419uwu583q743wllMkpo2'
 ```
 
-Or you can use the `-j` flag to show the corresponding John the Ripper format for the hash.
+Or you can use the `--john-only` flag to show the corresponding John the Ripper format for the hash.
 
 ```bash
-hashid -j '$1$sAdr$A419uwu583q743wllMkpo2'
+hashid --john-only '$1$sAdr$A419uwu583q743wllMkpo2'
 ```
 
 ### Cyberchef
@@ -93,3 +93,8 @@ john --format=md5 --wordlist=rockyou.txt --rules passwords.txt
 This command will try to crack the password (which is md5 hash) using the rockyou.txt wordlist and applying rules to modify the words in the list.
 
 ### Ophcrack
+
+### Crackstation
+
+[Crackstation](https://crackstation.net/) is a free online hash cracking service that can crack various hash types using a large database of precomputed hashes. It is useful for quickly cracking hashes without the need to set up your own cracking environment.
+Recommended for beginner users or for quick tests.

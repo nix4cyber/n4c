@@ -47,4 +47,20 @@ Checks the encrypted files in sample.zip for all lowercase 6 character passwords
 
 Checks the obscured image test.ppm for all four character passwords.
 
-## z2c
+## Archive2hash conversion tools
+
+### zip2hashcat, rar2hashcat, 7z2hashcat
+
+*zip2hashcat* is a tool to convert zip files to a hash that can be cracked with hashcat. If the password is different for the given zip files, then this won't work at all.
+
+```bash
+zip2hashcat files.zip > hash.txt
+```
+
+Same for rar2hashcat and 7z2hashcat.
+
+### zip2john
+
+```bash
+zip2john files.zip > hash.txt
+```

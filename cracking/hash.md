@@ -59,7 +59,7 @@ Additionally, you can use different flags and options to customize the attack. F
 **Below is an example of a command to crack a hash (from [hashcat's example hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)) using Hashcat and with various arguments:**
 
 ```bash
-hashcat -m 500 -o result.txt --remove --potfile-disable -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --username "administrator:\$1\$28772684\$iEwNOgGugqO9.bIz5sk8k/" /tmp/wordlists/passwords/password.txt -w 4 --opencl-device-types 1,2 
+hashcat -m 500 -o result.txt --potfile-disable -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --username "administrator:\$1\$28772684\$iEwNOgGugqO9.bIz5sk8k/" /tmp/wordlists/passwords/password.txt -w 4 --opencl-device-types 1,2 
 ```
 
 What's best to do is to test different combinations of arguments in the first running seconds to see how you can get the best performance out of your machine for this specific hash type.

@@ -27,13 +27,17 @@ fcrackzip searches each given zipfile for encrypted files and tries to obtain th
 fcrackzip -u -D -p [wordlist] [ZIP file]
 ```
 
+The `-u` flag will try to decompress the first file by calling unzip with the guessed password. This weeds out false positives when not enough files have been given.
+The `-D` flag selects dictionary mode. In this mode, fcrackzip will read passwords from a file, which must contain one password per line and should be alphabetically sorted.
+The `-p` flag will set initial (starting) password for brute-force searching to string, or use the file with the name string to supply passwords for dictionary searching.
+
+- Examples :
+
 ```bash
 fcrackzip -u -D -p /tmp/wordlists/passwords/password.txt ~/file.zip
 ```
 
-The `-u` flag will try to decompress the first file by calling unzip with the guessed password. This weeds out false positives when not enough files have been given.
-The `-D` flag selects dictionary mode. In this mode, fcrackzip will read passwords from a file, which must contain one password per line and should be alphabetically sorted.
-The `-p` flag will set initial (starting) password for brute-force searching to string, or use the file with the name string to supply passwords for dictionary searching.
+Use the wordlist /tmp/wordlists/passwords/password.txt to try to crack the password of the zip file ~/file.zip.
 
 ```bash
 fcrackzip -c a -p aaaaaa sample.zip

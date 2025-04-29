@@ -27,16 +27,10 @@ You can identify what type of hash you are dealing with using the `haiti` tool. 
 haiti <hash>
 ```
 
-You can also use the `--hashcat-only` flag to only show the corresponding Hashcat mode for the hash.
+You can also use the `--hashcat-only` flag to only show the corresponding Hashcat mode for the hash. Same for John the Ripper with the `--john-only` flag.
 
 ```bash
-haiti --hashcat-only '$1$sAdr$A419uwu583q743wllMkpo2'
-```
-
-Or you can use the `--john-only` flag to only show the corresponding John the Ripper format for the hash.
-
-```bash
-haiti --john-only '$1$sAdr$A419uwu583q743wllMkpo2'
+haiti --hashcat-only <hash>
 ```
 
 ### Cyberchef
@@ -59,7 +53,7 @@ Additionally, you can use different flags and options to customize the attack. F
 Below is an example of a command to crack a hash (from [hashcat's example hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)) using Hashcat and with various arguments:
 
 ```bash
-hashcat -m 500 -o result.txt --potfile-disable -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --username "administrator:\$1\$28772684\$iEwNOgGugqO9.bIz5sk8k/" /tmp/wordlists/passwords/password.txt -w 4 --opencl-device-types 1,2 
+hashcat -m 500 -o result.txt --potfile-disable -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --username <user:hash> /tmp/wordlists/passwords/password.txt -w 4 --opencl-device-types 1,2 
 ```
 
 What's best to do is to test different combinations of arguments in the first running seconds to see how you can get the best performance out of your machine for this specific hash type. As you can also see you can specify the hash directly or use its path in the example above this one.

@@ -15,7 +15,7 @@ in pkgs.mkShell {
   nativeBuildInputs = packages;
 
   shellHook = ''
-    ${utils.printHeader "Wifi"}
+    ${utils.printHeader "Network"}
     ${utils.linkSources sources}
     ${utils.printPackageList packages}
   '';

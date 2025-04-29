@@ -1,11 +1,11 @@
 ---
-title: wifi
+title: network
 layout: page
 ---
 
-# 🛜 Wifi
+# 🛜 Network
 
-Wifi attacks are a category of attacks that target wireless networks. These attacks can be used to gain unauthorized access to a network, intercept data, or disrupt network services. Some common wifi attacks include:
+Network attacks are a category of attacks that target wireless networks. These attacks can be used to gain unauthorized access to a network, intercept data, or disrupt network services. Some common network attacks include:
 
 - Wifi Security Attacks : WEP cracking, WPA/WPA2 handshake capture, WPA3 downgrade attacks, etc.
 

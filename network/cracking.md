@@ -1,10 +1,10 @@
 ---
-title: Network cracking
+title: Wifi cracking
 layout: page
-parent: wifi
+parent: network
 ---
 
-# Network cracking
+# Wifi cracking
 
 <details open markdown="block">
   <summary>
@@ -16,10 +16,6 @@ parent: wifi
 </details>
 
 ---
-
-## Disclaimer
-
-This is for educational purposes only. Do not use this information for illegal activities. Always get permission before testing any network.
 
 ## Setup
 

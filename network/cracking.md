@@ -75,7 +75,7 @@ This will generate a lot of traffic and help you capture more packets.
 
 ### Cracking the WEP key
 
-Once you have captured enough packets (at least 10000 IVs), you can crack the WEP key using the following command:
+Once you have captured enough packets (at least 50000 IVs, recommended 200000), you can crack the WEP key using the following command:
 
 ```bash
 sudo aircrack-ng <output_file>
@@ -108,6 +108,7 @@ sudo aircrack-ng -w <wordlist> <capture_file>
 ```
 
 This will attempt to crack the WPA/WPA2 key using the wordlist provided. If successful, it will display the WPA/WPA2 key in the terminal.
+Note that if the ESSID is hidden, you will need to use the `-e` option to specify the ESSID when cracking the key.
 
 ## WPA3 downgrade
 

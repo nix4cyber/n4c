@@ -24,7 +24,7 @@ It allows you to create a graph of your findings, which can help you see connect
 
 ## Forgotten passwords
 
-To find email addresses and phone numbers associated with an account, you can click on "Forgot password?" on the login page of a website. Be careful, though, this creates notifications and can be detected by the target.
+To find email addresses and phone numbers associated with an account, you can click on "Forgot password?" on the login page of a website. Be careful, though, this creates notifications and can be detected by the target, and often gives your information away.
 
 ## Archive Search
 

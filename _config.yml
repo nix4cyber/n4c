@@ -1,6 +1,7 @@
 title: Nix 4 Cyber
 description:  Nix 4 cyber is a collection of tools and scripts to help you with your cyber security tasks. 
 theme: just-the-docs
+color_scheme: n4c
 
 url: https://nix4cyber.github.io/n4c
 logo: "/assets/logo-large.png"

@@ -20,7 +20,6 @@ let
     dirb
     whois
     sqlmap
-    burpsuite
     katana
     jq
     httrack

@@ -3,7 +3,7 @@ title: forensics
 layout: page
 ---
 
-# Forensics
+# 💾 Forensics
 
 Forensics is the process of collecting, preserving, analyzing, and presenting data in a way that is legally acceptable. It is often used in criminal investigations, but can also be used in civil cases, corporate investigations, and other contexts where data needs to be analyzed.
 

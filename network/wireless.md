@@ -1,10 +1,10 @@
 ---
-title: Wifi cracking
+title: Wireless
 layout: page
 parent: network
 ---
 
-# Wifi cracking
+# Wireless
 
 <details open markdown="block">
   <summary>

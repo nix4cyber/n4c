@@ -9,11 +9,11 @@ $grey-dk-300: #19191B;
 $body-background-color: $grey-dk-300;
 $body-heading-color: $grey-lt-000;
 $body-text-color: $grey-lt-300;
-$link-color: #7253ED;
+$link-color: #9D87F2;
 $nav-child-link-color: $grey-dk-000;
 $sidebar-color: $grey-dk-300;
 $base-button-color: $grey-dk-250;
-$btn-primary-color: #7253ED;
+$btn-primary-color: #9D87F2;
 $code-background-color: #31343f; // OneDarkJekyll default for syntax-one-dark-vivid
 $code-linenumber-color: #dee2f7; // OneDarkJekyll .nf for syntax-one-dark-vivid
 $feedback-color: darken($sidebar-color, 6%);
@@ -21,3 +21,6 @@ $table-background-color: $grey-dk-250;
 $search-background-color: $grey-dk-250;
 $search-result-preview-color: $grey-dk-000;
 $border-color: $grey-dk-200;
+
+$nav-width: 12.5rem !default;
+$nav-width-md: 11.5rem !default;

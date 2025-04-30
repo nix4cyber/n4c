@@ -39,6 +39,8 @@ gobuster dir -u $url -w $wordlist -t 50
 
 ### Spider
 
+A spider is a tool that crawls a website and collects information about its structure and content. It can be used to find hidden directories, files, and parameters.
+
 ```bash
 katana -c 15 -p 15 -u $target > output
 ```

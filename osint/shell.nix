@@ -12,6 +12,7 @@ let
     trufflehog
   ];
 in pkgs.mkShell {
+  name = "osint";
   nativeBuildInputs = packages;
 
   shellHook = ''

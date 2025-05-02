@@ -5,6 +5,7 @@ let
   packages = with pkgs; [ ];
 
 in pkgs.mkShell {
+  name = "forensics";
   nativeBuildInputs = packages;
 
   shellHook = ''

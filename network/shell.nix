@@ -12,6 +12,7 @@ let
   packages = with pkgs; [ aircrack-ng hcxdumptool hcxtools tcpdump ];
 
 in pkgs.mkShell {
+  name = "network";
   nativeBuildInputs = packages;
 
   shellHook = ''

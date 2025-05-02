@@ -5,6 +5,7 @@ let
   packages = with pkgs; [ ];
 
 in pkgs.mkShell {
+  name = "privesc";
   nativeBuildInputs = packages;
 
   shellHook = ''

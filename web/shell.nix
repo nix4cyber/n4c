@@ -27,6 +27,7 @@ let
     subfinder
   ];
 in pkgs.mkShell {
+  name = "web";
   nativeBuildInputs = packages;
 
   shellHook = ''

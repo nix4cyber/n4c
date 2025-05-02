@@ -30,6 +30,7 @@ let
   ];
 
 in pkgs.mkShell {
+  name = "cracking";
   nativeBuildInputs = packages;
 
   shellHook = ''

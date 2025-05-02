@@ -138,7 +138,7 @@ Now, we need to convert the pcapng file to the specific hash that `hashcat` can 
 hcxpcapngtool -o <output_file>.hc22000 <input_capture_file>.pcapng
 ```
 
-Finally, we can use `hashcat` to crack the hash. You can use the following command to try to crack the hash using a wordlist and a rule file, but bruteforce is also possible for wireless cracking.
+Finally, we can use [`hashcat`](https://nix4cyber.github.io/n4c/cracking/hash.html#hashcat) to crack the hash. You will need to import the `cracking` module. You can use the following command to try to crack the hash using a wordlist and a rule file, but bruteforce is also possible for wireless cracking.
 
 ```bash
 hashcat -m 22000 -a 0 -o <output_file> -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule <hash_file>.hc22000 /tmp/wordlists/passwords/most_used_passwords.txt -w 4 --opencl-device-types 1,2 
@@ -205,6 +205,8 @@ sudo hcxdumptool -i <monitor_interface> -c <channel>[a,b,c] --bpf=<bpf_input_fil
 ```bash
 hcxpcapngtool -o <output_file>.hc22000 <input_capture_file>.pcapng
 ```
+
+Reminder that you need to import the cracking module to use [`hashcat`](https://nix4cyber.github.io/n4c/cracking/hash.html#hashcat) to crack the hash.
 
 ```bash
 hashcat -m 22000 -a 0 -o <output_file> -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule <hash_file>.hc22000 /tmp/wordlists/passwords/most_used_passwords.txt -w 4 --opencl-device-types 1,2 

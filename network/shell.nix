@@ -9,7 +9,7 @@ let
     })
   ];
 
-  packages = with pkgs; [ aircrack-ng hashcat hcxdumptool hcxtools tcpdump ];
+  packages = with pkgs; [ aircrack-ng hcxdumptool hcxtools tcpdump ];
 
 in pkgs.mkShell {
   nativeBuildInputs = packages;

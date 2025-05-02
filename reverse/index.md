@@ -5,7 +5,7 @@ layout: page
 
 # ⏪ Reverse Engineering
 
-Reverse engineering is the process of analyzing a system to identify its components and their interrelationships. It is often used to understand how a system works, to extract knowledge or design information from it, or to reproduce or enhance the system.
+Reverse Engineering is the process of analyzing software (especially malware), firmware, hardware components, or network protocols to understand their internal structure, functionality, and behavior, typically without access to the original source code or design specifications.
 
 ## 🐚 Shell
 

@@ -19,7 +19,7 @@
 
       # Filter to only include directories that have a shell.nix file
       dirs = builtins.filter (dir:
-        builtins.pathExists (./. + "/${dir}/shell.nix")
+        dir != "example" && builtins.pathExists (./. + "/${dir}/shell.nix")
         && builtins.isAttrs (builtins.readDir (./. + "/${dir}"))) allEntries;
 
       loadShell = name: {

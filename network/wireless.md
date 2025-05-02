@@ -85,7 +85,7 @@ This will attempt to crack the WEP key using the captured packets. If successful
 
 ## WPA/WPA2 cracking
 
-### Option 1 (easier but slower and less successful)
+### Option 1 (easier)
 
 To crack WPA/WPA2, you need to capture a 4-way handshake. To do so, you have to capture the handshake when a client connects to the network, so start the airodump-ng command to capture packets:
 
@@ -108,7 +108,7 @@ aircrack-ng -w <wordlist> <capture_file>
 This will attempt to crack the WPA/WPA2 key using the wordlist provided. If successful, it will display the WPA/WPA2 key in the terminal.
 Note that if the ESSID is hidden, you will need to use the `-e` option to specify the ESSID when cracking the key.
 
-### Option 2 (harder but faster and more successful)
+### Option 2 (harder but better)
 
 A way faster and more successful alternative to the previous method is to use `hcxdumptool` to capture the handshake or the PMKID and then crack it with `hashcat`. This makes it more likely to succeed than the previous method since we could only use the handshake with it, and this method allows us to use `hashcat` to crack the hash which is way faster than `aircrack-ng`.
 
@@ -174,7 +174,7 @@ sudo airbase-ng -e <SSID> -c <channel> -P -C 30 -Z 4 <monitor_interface>
 
 This will create a fake AP with the specified SSID and channel, however, this is not a true WPA2 AP, which does not allow us to capture the handshake. To do this, we need to use a different method. This is the only thing missing to make WPA3 cracking work.
 
-### Option 1 (easier but slower and less successful)
+### Option 1 (easier)
 
 Conceal the WPA3 handshake by capturing it with airodump-ng:
 
@@ -190,7 +190,7 @@ aircrack-ng -w <wordlist> <capture_file>
 
 This will attempt to crack the WPA3 key using the wordlist provided. If successful, it will display the WPA3 key in the terminal.
 
-### Option 2 (harder but faster and more successful)
+### Option 2 (harder but better)
 
 Same as WPA2, if you need more explanation check this [part](#option-2-harder-but-faster-and-more-successful) of the WPA2 cracking section.
 

@@ -22,8 +22,8 @@ parent: osint
 | **From** | **Use** |
 | --- | --- |
 | Email | `holehe <email>` |
-| Domain | `theharvester -d <domain> -l 100` |
-| | `theharvester -d <domain> -l 100 -b all` (full)|
+| Domain | `theHarvester -d <domain> -l 100` |
+| | `theHarvester -d <domain> -l 100 -b all` (full)|
 | Username | `sherlock <username>` |
 | Image | `exiftool <image>` |
 | Instagram | `instaloader profile <username>` |

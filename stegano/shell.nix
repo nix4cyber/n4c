@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> { config = { allowUnfree = false; }; }, utils }:
 let
   sources = [ ];
-  packages = with pkgs; [ binwalk exiftool foremost ];
+  packages = with pkgs; [ binwalk exiftool foremost exif ];
 
 in pkgs.mkShell {
   name = "stegano";

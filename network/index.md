@@ -26,3 +26,13 @@ The shell contains all the tools needed to perform the attack category & wordlis
 ```bash
 nix develop --refresh github:nix4cyber/n4c#network
 ```
+
+## 📦 Applications
+
+### Wireshark
+
+Wireshark is a network protocol analyzer. It is used to capture and analyze network traffic in real-time. It can be used to troubleshoot network issues, analyze network performance, and detect security threats.
+
+```bash
+nix-shell -p wireshark --run wireshark
+```

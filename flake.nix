@@ -36,10 +36,7 @@
           inherit pkgs inputs utils;
         }).nativeBuildInputs or [ ]) dirs);
       combineShellHooks = builtins.concatStringsSep "\n" (map (name:
-        let
-          shell = import ./${name}/shell.nix {
-            inherit pkgs utils inputs;
-          };
+        let shell = import ./${name}/shell.nix { inherit pkgs utils inputs; };
         in shell.shellHook or "") dirs);
     in {
       lib = { inherit utils; };

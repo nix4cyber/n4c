@@ -1,4 +1,5 @@
-{ pkgs ? import <nixpkgs> { config = { allowUnfree = false; }; }, utils }:
+{ pkgs ? import <nixpkgs> { config = { allowUnfree = false; }; }, utils, inputs
+}:
 let
   sources = [ ];
 
@@ -10,6 +11,7 @@ let
     curl
     instaloader
     trufflehog
+    inputs.gh-recon.defaultPackage.${pkgs.system}
   ];
 in pkgs.mkShell {
   name = "osint";

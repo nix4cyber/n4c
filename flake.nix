@@ -1,8 +1,11 @@
 {
   # https://github.com/nix4cyber/n4c
   description = "nix4cyber";
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
-  outputs = { nixpkgs, ... }:
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs";
+    gh-recon.url = "github:anotherhadi/gh-recon";
+  };
+  outputs = { nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -24,23 +27,18 @@
 
       loadShell = name: {
         inherit name;
-        value = import ./${name}/shell.nix {
-          inherit pkgs;
-          inherit utils;
-        };
+        value = import ./${name}/shell.nix { inherit pkgs inputs utils; };
       };
 
       shells = builtins.listToAttrs (map loadShell dirs);
       allBuildInputs = builtins.concatLists (map (name:
         (import ./${name}/shell.nix {
-          inherit pkgs;
-          inherit utils;
+          inherit pkgs inputs utils;
         }).nativeBuildInputs or [ ]) dirs);
       combineShellHooks = builtins.concatStringsSep "\n" (map (name:
         let
           shell = import ./${name}/shell.nix {
-            inherit pkgs;
-            inherit utils;
+            inherit pkgs utils inputs;
           };
         in shell.shellHook or "") dirs);
     in {

@@ -1,6 +1,40 @@
 {
   "nodes": {
+    "gh-recon": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1746825861,
+        "narHash": "sha256-KScMZW+RuEEli+oB9iFf+TK2IWUukEokwcFO6MVQg9g=",
+        "owner": "anotherhadi",
+        "repo": "gh-recon",
+        "rev": "4b75b6f75566d2e38a7a69bcb6193f767cccc639",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anotherhadi",
+        "repo": "gh-recon",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1746663147,
+        "narHash": "sha256-Ua0drDHawlzNqJnclTJGf87dBmaO/tn7iZ+TCkTRpRc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "dda3dcd3fe03e991015e9a74b22d35950f264a54",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1744620066,
         "narHash": "sha256-pJUnfKFG4vytD+OGzhOPHqTHU3SET+vX5IPtw0wOfxc=",
@@ -17,7 +51,8 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "gh-recon": "gh-recon",
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },

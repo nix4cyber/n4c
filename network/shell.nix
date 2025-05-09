@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { config = { allowUnfree = false; }; }, utils }:
+{ pkgs ? import <nixpkgs> { config = { allowUnfree = false; }; }, utils, ... }:
 let
   sources = [
     (pkgs.fetchFromGitHub {

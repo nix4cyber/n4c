@@ -40,6 +40,8 @@ parent: osint
 | Image | [PimEyes](https://pimeyes.com/) |
 | | [TinEye](https://tineye.com) |
 | | [Pic2Map (exif geolocation)](https://www.pic2map.com/) |
+| Username | [DeHashed](https://dehashed.com/search) |
+| | [BreachDirectory](https://breachdirectory.org/) |
 | Email | [DeHashed](https://dehashed.com/search) |
 | | [Hunter](https://hunter.io/) |
 | | [HaveIBeenPwned](https://haveibeenpwned.com/) |

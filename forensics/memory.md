@@ -77,6 +77,12 @@ If you want to see the processes in a tree format, you can use the `pstree` comm
 volatility2 -f <dump_file> --profile=<profile> pstree
 ```
 
+Finally, you can use the `psxview` command to find hidden processes with various process listings.
+
+```bash
+volatility2 -f <dump_file> --profile=<profile> psxview
+```
+
 ### Services
 
 You can list the services running in the memory dump with the `svcscan` command.
@@ -151,12 +157,34 @@ You can dump the account hashes in the memory dump with the `hashdump` command.
 volatility2 -f <dump_file> --profile=<profile> hashdump
 ```
 
+### Process dumping
+
+You can dump a process to an executable file sample with the `procdump` command.
+
+```bash
+volatility2 -f <dump_file> --profile=<profile> procdump -p <pid> -D <output_directory>
+```
+
+### File analysis
+
+You can list the file structure in the memory dump with the `filescan` command.
+
+```bash
+volatility2 -f <dump_file> --profile=<profile> filescan
+```
+
 ### Registry analysis
 
 You can analyze the registry in the memory dump with the `hivelist` command.
 
 ```bash
 volatility2 -f <dump_file> --profile=<profile> hivelist
+```
+
+With this, you can use the `hivedump` command to dump the registry hives.
+
+```bash
+volatility2 -f <dump_file> --profile=<profile> hivedump -o <hive_offset>
 ```
 
 You can then use the 'printkey' command to print the keys in a hive (key matches the name field in the output of the hivelist command).
@@ -211,13 +239,10 @@ Inspecting callbacks can also help in detecting malware, and you can use the `ca
 volatility2 -f <dump_file> --profile=<profile> callbacks
 ```
 
-Finally, `idt` and `gdt` can be used to list the IDT and GDT tables, which can be useful for detecting rootkits.
+### Yara signatures
+
+You can use Yara signatures to detect malware in the memory dump with the `yarascan` command.
 
 ```bash
-volatility2 -f <dump_file> --profile=<profile> idt
+volatility2 -f <dump_file> --profile=<profile> yarascan -y <yara_file>
 ```
-
-```bash
-volatility2 -f <dump_file> --profile=<profile> gdt
-```
-

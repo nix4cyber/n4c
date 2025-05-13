@@ -9,7 +9,14 @@ let
     })
   ];
 
-  packages = with pkgs; [ aircrack-ng hcxdumptool hcxtools tcpdump ];
+  packages = with pkgs; [
+    aircrack-ng
+    hcxdumptool
+    hcxtools
+    tcpdump
+    masscan
+    nmap
+  ];
 
 in pkgs.mkShell {
   name = "network";

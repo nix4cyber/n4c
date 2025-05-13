@@ -99,7 +99,7 @@ You can dump the memory of a process with the `memdump` command.
 volatility2 -f <dump_file> --profile=<profile> memdump -p <pid> -D <output_directory>
 ```
 
-Or you can even dump the memory of all processes by removing the `-p` option.
+Or you can even dump the memory of all processes by removing the `-p` option. Once you have the memory dumps, using `strings` combined with `grep` can be useful to find interesting strings in the memory dumps.
 
 ### Network scanning
 

@@ -8,7 +8,7 @@
 
 Nix 4 cyber is a collection of tools and scripts to help you with your cyber security tasks. It is designed to be easy to use and flexible, allowing you to customize it to your needs. The project is organized into different categories, each containing a shell.nix file that defines the environment for that category.
 
-Check the online documentation [here](https://nix4cyber.github.io/n4c/).
+Check the online version [here](https://nix4cyber.github.io/n4c/).
 
 ## Usage
 
@@ -18,7 +18,8 @@ To use Nix 4 cyber, you need to have Nix installed on your system. You can then 
 nix develop --refresh github:nix4cyber/n4c#<category>
 ```
 
-Categories include "all" or one of "osint", "web", "network". For example, to start the OSINT environment, you would run:
+Categories include "all" or one of "osint", "web", etc...
+For example, to start the OSINT environment, you would run: `nix develop --refresh github:nix4cyber/n4c#osint`.
 
 ## Alias
 

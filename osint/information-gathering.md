@@ -28,6 +28,7 @@ parent: osint
 | Image | `exiftool <image>` |
 | Instagram | `instaloader profile <username>` |
 | Github | `trufflehog github --org=<username,org>` |
+| | `gh-recon --username <username>` |
 
 ## Online tools
 

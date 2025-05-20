@@ -36,6 +36,8 @@ parent: osint
 | --- | --- |
 | Visualiser | [OSINTracker](https://www.osintracker.com/) |
 | IP | [Shodan](https://www.shodan.io/) |
+| | [Censys](https://search.censys.io/) |
+| Domain | [Whois](https://www.whois.com/whois/) |
 | Name | [Webmii](https://webmii.com/) |
 | SSID | [Wigle](https://wigle.net/) |
 | Image | [PimEyes](https://pimeyes.com/) |
@@ -46,6 +48,9 @@ parent: osint
 | Email | [DeHashed](https://dehashed.com/search) |
 | | [Hunter](https://hunter.io/) |
 | | [HaveIBeenPwned](https://haveibeenpwned.com/) |
+| | [BreachDirectory](https://breachdirectory.org/) |
+| All | [IntelX](https://intelx.io/) |
+| | [LeakLookup](https://leak-lookup.com/search) |
 | Misc | [Goosint](https://goosint.com/) |
 | | [OSINT Framework](https://osintframework.com/) |
 | | [OSINT Dojo](https://osintdojo.com/) |

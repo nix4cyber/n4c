@@ -55,7 +55,7 @@ Checks the obscured image test.ppm for all four character passwords.
 
 ### zip2hashcat, rar2hashcat, 7z2hashcat
 
-zip2hashcat is a tool to convert zip files to a hash that can be cracked with hashcat. If the password is different for the given zip files, then this won't work at all.
+zip2hashcat is a tool to convert zip files to a hash that can be cracked with hashcat. If the password is different between the files in the arhcive, then it will not work.
 
 ```bash
 zip2hashcat files.zip > hash.txt

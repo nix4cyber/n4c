@@ -8,7 +8,7 @@
 
 Nix 4 cyber is a collection of tools and scripts to help you with your cyber security tasks. It is designed to be easy to use and flexible, allowing you to customize it to your needs. The project is organized into different categories, each containing a shell.nix file that defines the environment for that category.
 
-Check the online documentation [here](https://nix4cyber.github.io/n4c/).
+Check the online documentation [here](https://n4c.hadi.diy/).
 
 ## Usage
 

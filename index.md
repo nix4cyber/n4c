@@ -1,4 +1,4 @@
----
+[---](2025-05-26_---.md)--
 title: home
 layout: home
 nav_order: 1
@@ -31,6 +31,7 @@ Add the following in your shell config:
 ```bash
 function n4c() {
     nix develop --refresh "github:nix4cyber/n4c#${1:-all}" # -c zsh # Escape the $ with ''$ in nix
+    # mkdir /tmp/$(date +"%d%m%y") && cd /tmp/$(date +"%d%m%y")
 }
 ```
 

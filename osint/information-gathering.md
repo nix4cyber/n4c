@@ -51,6 +51,7 @@ parent: osint
 | | [BreachDirectory](https://breachdirectory.org/) |
 | All | [IntelX](https://intelx.io/) |
 | | [LeakLookup](https://leak-lookup.com/search) |
+| | [BreachDetective](https://breachdetective.com/dashboard) |
 | Misc | [Goosint](https://goosint.com/) |
 | | [OSINT Framework](https://osintframework.com/) |
 | | [OSINT Dojo](https://osintdojo.com/) |

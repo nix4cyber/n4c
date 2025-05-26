@@ -1,4 +1,9 @@
 [//]: # (Auto-generated from index.md)
+[---](2025-05-26_---.md)--
+title: home
+layout: home
+nav_order: 1
+---
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/nix4cyber/n4c/main/assets/logo.png" width="120px" />
@@ -8,7 +13,7 @@
 
 Nix 4 cyber is a collection of tools and scripts to help you with your cyber security tasks. It is designed to be easy to use and flexible, allowing you to customize it to your needs. The project is organized into different categories, each containing a shell.nix file that defines the environment for that category.
 
-Check the online version [here](https://nix4cyber.github.io/n4c/).
+Check the online documentation [here](https://nix4cyber.github.io/n4c/).
 
 ## Usage
 
@@ -18,8 +23,7 @@ To use Nix 4 cyber, you need to have Nix installed on your system. You can then 
 nix develop --refresh github:nix4cyber/n4c#<category>
 ```
 
-Categories include "all" or one of "osint", "web", etc...
-For example, to start the OSINT environment, you would run: `nix develop --refresh github:nix4cyber/n4c#osint`.
+Categories include "all" or one of "osint", "web", "network". For example, to start the OSINT environment, you would run:
 
 ## Alias
 
@@ -28,6 +32,7 @@ Add the following in your shell config:
 ```bash
 function n4c() {
     nix develop --refresh "github:nix4cyber/n4c#${1:-all}" # -c zsh # Escape the $ with ''$ in nix
+    # mkdir /tmp/$(date +"%d%m%y") && cd /tmp/$(date +"%d%m%y")
 }
 ```
 

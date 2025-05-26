@@ -1,4 +1,4 @@
-[---](2025-05-26_---.md)--
+---
 title: home
 layout: home
 nav_order: 1
@@ -22,7 +22,7 @@ To use Nix 4 cyber, you need to have Nix installed on your system. You can then 
 nix develop --refresh github:nix4cyber/n4c#<category>
 ```
 
-Categories include "all" or one of "osint", "web", "network", etc. For example, to start the OSINT environment, you would run:
+Categories include "all" or one of "osint", "web", "network". For example, to start the OSINT environment, you would run:
 
 ## Alias
 

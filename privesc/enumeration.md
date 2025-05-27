@@ -40,4 +40,9 @@ LinPEAS is a script that search for possible paths to escalate privileges on Lin
 curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh
 ```
 
+## Windows
 
+### LOLBAS
+
+The goal of the LOLBAS project is to document every binary, script, and library that can be used for Living Off The Land techniques.
+Refer to the [LOLBAS website](https://lolbas-project.github.io/#) for the full list of binaries and their exploits.

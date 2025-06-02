@@ -79,7 +79,7 @@ Add the following in your shell config:
 ```bash
 function n4c() {
     nix develop --refresh "github:nix4cyber/n4c#${1:-all}" # -c zsh # Escape the $ with ''$ in nix
-    # mkdir /tmp/$(date +"%d%m%y") && cd /tmp/$(date +"%d%m%y") # To create a temporary directory
+    # mkdir -p /tmp/$(date +"%d%m%y") && cd /tmp/$(date +"%d%m%y") # To create a temporary directory
 }
 ```
 

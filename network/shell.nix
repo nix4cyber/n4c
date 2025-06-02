@@ -16,6 +16,8 @@ let
     tcpdump
     masscan
     nmap
+    wireshark
+    tshark
   ];
 
 in pkgs.mkShell {

@@ -2,7 +2,7 @@
 let
   sources = [ ];
 
-  packages = with pkgs; [ volatility2-bin  ];
+  packages = with pkgs; [ volatility2-bin testdisk ddrescue ];
 
 in pkgs.mkShell {
   name = "forensics";

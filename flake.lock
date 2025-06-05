@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1749111167,
-        "narHash": "sha256-8shWfi3h6FaPUs9PjztuN0wawjVCSxPJu+clQfforoY=",
+        "lastModified": 1749111359,
+        "narHash": "sha256-rAPjiaZ6xtC9qG3Gcc8Gt61qFlIGxU7rCJlDrzVJev4=",
         "owner": "anotherhadi",
         "repo": "gh-recon",
-        "rev": "39e618fb985c90c78130f80d69295fde54a4e8d8",
+        "rev": "65f964906520e0389f4b78319a5a24761fd26272",
         "type": "github"
       },
       "original": {

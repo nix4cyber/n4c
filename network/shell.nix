@@ -11,6 +11,7 @@ let
 
   packages = with pkgs; [
     aircrack-ng
+    hashcat
     hcxdumptool
     hcxtools
     tcpdump

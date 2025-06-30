@@ -341,7 +341,7 @@ nmap <ip> --data-length <length>
 
 ### NSE (Nmap Scripting Engine)
 
-Nmap has a powerful scripting engine that can be used to automate tasks and perform advanced scans. You can use the `-sC` option to enable the default scripts:
+Nmap has a powerful scripting engine that can be used to automate tasks and perform advanced scans. You can use the `-sC` option to enable the default scripts, which allows you to get more information about the services running on the target:
 
 ```bash
 nmap <ip> -sC

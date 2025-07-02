@@ -19,6 +19,7 @@ let
     nmap
     wireshark
     tshark
+    python312Packages.impacket
   ];
 
 in pkgs.mkShell {

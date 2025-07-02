@@ -26,19 +26,19 @@ Masscan is a fast port scanner that can be used to scan large networks quickly. 
 If you want to scan a specific host, you can use the following command:
 
 ```bash
-masscan <ip>
+masscan <ip> -p <port>
 ```
 
 If you want to scan a subnet, you can use the following command:
 
 ```bash
-masscan <ip>/<subnet>
+masscan <ip>/<subnet> -p <port>
 ```
 
 Excluding an IP address can be done using the `--exclude` option:
 
 ```bash
-masscan <ip>/<subnet> --exclude=<ip1>
+masscan <ip>/<subnet> --exclude=<ip1> -p <port>
 ```
 
 ### Port specification

@@ -19,7 +19,15 @@ let
     gobuster
     dirb
     whois
+    freerdp
+    lftp
+    iredis
+    smbmap
+    smbclient-ng
+    mysql84
     sqlmap
+    responder
+    awscli
     katana
     jq
     httrack

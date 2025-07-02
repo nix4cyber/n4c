@@ -23,7 +23,7 @@ let
     lftp
     iredis
     smbmap
-    smbclient-ng
+    # smbclient-ng
     mysql84
     sqlmap
     responder

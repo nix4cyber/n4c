@@ -17,12 +17,3 @@ The shell contains all the tools & files needed to perform the attack category.
 nix develop --refresh github:nix4cyber/n4c#reverse
 ```
 
-## 📦 Applications
-
-### Ghidra
-
-Ghidra is a software reverse engineering (SRE) suite of tools developed by the National Security Agency (NSA). It helps analyze compiled code in a variety of formats, including executable files, libraries, and firmware images.
-
-```bash
-nix-shell -p ghidra --run ghidra
-```

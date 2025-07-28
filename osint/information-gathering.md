@@ -22,6 +22,8 @@ parent: osint
 | **From**  | **Use**                                         |
 | --------- | ----------------------------------------------- |
 | Email     | `holehe <email>`                                |
+|           | `ghunt <email> # to find google account`        |
+|           | `gh-recon --email <email>`                      |
 | Domain    | `theHarvester -d <domain> -l 100`               |
 |           | `theHarvester -d <domain> -l 100 -b all` (full) |
 | Username  | `sherlock <username>`                           |

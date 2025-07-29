@@ -26,13 +26,13 @@ To use Nix 4 cyber, you need to have Nix installed on your system. You can then
 start the shell with the following command:
 
 ```bash
-nix develop --refresh github:nix4cyber/n4c#<toolkit>
+nix develop github:nix4cyber/n4c#<toolkit>
 ```
 
 For example, to start the OSINT environment, you would run:
 
 ```bash
-nix develop --refresh github:nix4cyber/n4c#osint
+nix develop github:nix4cyber/n4c#osint
 ```
 
 ## 🧰 Available Toolkits

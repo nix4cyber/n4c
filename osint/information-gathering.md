@@ -19,18 +19,18 @@ parent: osint
 
 ## Command line tools
 
-| **From**  | **Use**                                         |
-| --------- | ----------------------------------------------- |
-| Email     | `holehe <email>`                                |
-|           | `ghunt <email> # to find google account`        |
-|           | `gh-recon --email <email>`                      |
-| Domain    | `theHarvester -d <domain> -l 100`               |
-|           | `theHarvester -d <domain> -l 100 -b all` (full) |
-| Username  | `sherlock <username>`                           |
-| Image     | `exiftool <image>`                              |
-| Instagram | `instaloader profile <username>`                |
-| Github    | `trufflehog github --org=<username,org>`        |
-|           | `gh-recon --username <username>`                |
+| **From**  | **Use**                                        |
+| --------- | ---------------------------------------------- |
+| Email     | `holehe $email`                                |
+|           | `ghunt email $email` (for google account)      |
+|           | `gh-recon --email $email` (for github account) |
+| Domain    | `theHarvester -d $domain -l 100`               |
+|           | `theHarvester -d $domain -l 100 -b all` (full) |
+| Username  | `sherlock $username`                           |
+| Image     | `exiftool $imagePath`                          |
+| Instagram | `instaloader profile $username`                |
+| Github    | `trufflehog github --org=$usernameOrOrg>`      |
+|           | `gh-recon --username $username`                |
 
 ## Online tools
 

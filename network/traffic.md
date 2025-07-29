@@ -46,7 +46,7 @@ tshark -D
 To capture packets on a specific interface, run the following command:
 
 ```bash
-tshark -i <interface>
+tshark -i "$interface"
 ```
 
 You can specify a duration with the `-a` option (in seconds), specify a file to save the capture with the `-w` option, and specify a filter with the `-f` option:
@@ -54,7 +54,7 @@ You can specify a duration with the `-a` option (in seconds), specify a file to 
 Example :
 
 ```bash
-tshark -i <interface> -a duration:60 -w capture.pcap -f "port bootpc"
+tshark -i "$interface" -a duration:60 -w capture.pcap -f "port bootpc"
 ```
 
 ### Working with Capture Files
@@ -62,31 +62,31 @@ tshark -i <interface> -a duration:60 -w capture.pcap -f "port bootpc"
 tshark is commonly used to analyze previously saved packet capture files (`.pcap` or `.pcapng`). To read a capture file, use the `-r` option followed by the filename:
 
 ```bash
-tshark -r <capture_file>
+tshark -r capture.pcap
 ```
 
 Use the `-Y` option to apply a display filter to the packets in the capture file. For example, to filter for HTTP GET requests in a capture file, you can use:
 
 ```bash
-tshark -r <capture_file> -Y "http.request.method==GET"
+tshark -r capture.pcap -Y "http.request.method==GET"
 ```
 
 Or to only display ICMP packets, specifically echo requests (type 8):
 
 ```bash
-tshark -r <capture_file> -Y "icmp.type==8"
+tshark -r capture.pcap -Y "icmp.type==8"
 ```
 
 There are also capture filters that can be applied when reading a file. For example, to filter for packets from a specific IP address:
 
 ```bash
-tshark -r <capture_file> -f "<ip_address>"
+tshark -r capture.pcap -f "$ip"
 ```
 
 Or to capture ICMPv6 traffic between two specific IP addresses on a specific interface:
 
 ```bash
-tshark -ni <interface> -f "host <ip1> and host <ip2> and ip6 proto icmp6" 
+tshark -ni "$interface" -f "host $ip1 and host $ip2 and ip6 proto icmp6" 
 ```
 
 ### Extracting Specific Fields
@@ -96,19 +96,19 @@ The `-T fields` option is incredibly useful for extracting specific data fields 
 For instance, to capture HTTP requests and display the `http.host` and `http.user_agent` fields:
 
 ```bash
-tshark -i <interface> -Y http.request -T fields -e http.host -e http.user_agent
+tshark -i "$interface" -Y http.request -T fields -e http.host -e http.user_agent
 ```
 
 To capture DNS queries and display the query name and the corresponding response address:
 
 ```bash
-tshark -i <interface> -f "udp port 53" -n -T fields -e dns.qry.name -e dns.resp.addr
+tshark -i "$interface" -f "udp port 53" -n -T fields -e dns.qry.name -e dns.resp.addr
 ```
 
 You can also do this with a capture file, as shown below:
 
 ```bash
-tshark -r example.pcap -Y http.request -T fields -e http.host -e ip.dst -e http.request.full_uri
+tshark -r capture.pcap -Y http.request -T fields -e http.host -e ip.dst -e http.request.full_uri
 ```
 
 ### Analyzing Specific Protocols (HTTP, SSL/TLS)
@@ -116,13 +116,13 @@ tshark -r example.pcap -Y http.request -T fields -e http.host -e ip.dst -e http.
 tshark's display filters and field extraction capabilities are powerful for analyzing specific application-layer protocols, for instance, we can analyze HTTP POST requests containing the string "password" :
 
 ```bash
-tshark -i <interface> -Y 'http.request.method == POST and tcp contains "password"' | grep password
+tshark -i "$interface" -Y 'http.request.method == POST and tcp contains "password"' | grep password
 ```
 
 The following command extracts the source IP, destination IP, and the Server Name Indication (SNI) from Client Hello messages (handshake type 1). The SNI is particularly useful as it's often sent unencrypted, revealing the target domain even in encrypted traffic.
 
 ```bash
-tshark -n -r <capture_file> -Y 'ssl.handshake.type==1' -T fields -e ip.src -e ip.dst -e ssl.handshake.extensions_server_name
+tshark -n -r capture.pcap -Y 'ssl.handshake.type==1' -T fields -e ip.src -e ip.dst -e ssl.handshake.extensions_server_name
 ```
 
 ### Statistical Analysis

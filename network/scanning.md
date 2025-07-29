@@ -26,19 +26,19 @@ Masscan is a fast port scanner that can be used to scan large networks quickly. 
 If you want to scan a specific host, you can use the following command:
 
 ```bash
-masscan <ip> -p <port>
+masscan "$ip" -p "$port"
 ```
 
 If you want to scan a subnet, you can use the following command:
 
 ```bash
-masscan <ip>/<subnet> -p <port>
+masscan "$ip/$subnet" -p "$port"
 ```
 
 Excluding an IP address can be done using the `--exclude` option:
 
 ```bash
-masscan <ip>/<subnet> --exclude=<ip1> -p <port>
+masscan "$ip/$subnet" --exclude="$ip1" -p "$port"
 ```
 
 ### Port specification
@@ -46,27 +46,27 @@ masscan <ip>/<subnet> --exclude=<ip1> -p <port>
 You can specify which ports to scan using the `-p` option. You can specify a single port, a range of ports, a list of ports and more.
 
 ```bash
-masscan <ip> -p <port>
-masscan <ip> -p <port1>,<port2>,<port3>
-masscan <ip> -p <port1>-<port2>
+masscan "$ip" -p "$port"
+masscan "$ip" -p "$port1,$port2,$port3"
+masscan "$ip" -p "$port1-$port2"
 ```
 
 You can scan all ports using the `-p 0-65535` option:
 
 ```bash
-masscan <ip> -p 0-65535
+masscan "$ip" -p 0-65535
 ```
 
 You can also do an UDP scan using the `-pU` option:
 
 ```bash
-masscan <ip> -pU <port>
+masscan "$ip" -pU "$port"
 ```
 
 You can also scan the most common ports using the `--top-ports` option:
 
 ```bash
-masscan <ip> --top-ports <number_of_ports>
+masscan "$ip" --top-ports "$number_of_ports"
 ```
 
 ### Timing and Performance
@@ -74,13 +74,13 @@ masscan <ip> --top-ports <number_of_ports>
 The `--offline` option can be used in order to not send any traffic but to estimate the time it would take to scan the target.
 
 ```bash
-masscan <ip> --offline
+masscan "$ip" --offline
 ```
 
 You can use the `--rate` option to set the rate of packets per second. The default is 100 packets per second.
 
 ```bash
-masscan <ip> --rate <number>
+masscan "$ip" --rate "$packets_per_second"
 ```
 
 ### Output formats
@@ -88,37 +88,25 @@ masscan <ip> --rate <number>
 Masscan can be used to output the scan results in various formats. You can use the `-oB` option to output the results in binary format:
 
 ```bash
-masscan <ip> -oB <output_file>
+masscan "$ip" -oB output_file.bin
 ```
 
 You can then read a binary output using the `--readscan` option:
 
 ```bash
-masscan --readscan <output_file> # -oX <output_file> to convert it to XML
-```
-
-You can use the `-oX` option to output the results in XML format:
-
-```bash
-masscan <ip> -oX <output_file>
+masscan --readscan output_file.bin
 ```
 
 You can use the `-oG` option to output the results in grepable format:
 
 ```bash
-masscan <ip> -oG <output_file>
-```
-
-You can use the `-oJ` option to output the results in JSON format:
-
-```bash
-masscan <ip> -oJ <output_file>
+masscan "$ip" -oG output_file.grep
 ```
 
 You can use the `-oL` option to output the results in list format:
 
 ```bash
-masscan <ip> -oL <output_file>
+masscan "$ip" -oL output_file.list
 ```
 
 ### Other options
@@ -126,25 +114,25 @@ masscan <ip> -oL <output_file>
 You can use the `--banners` option to enable banner grabbing:
 
 ```bash
-masscan <ip> --banners
+masscan "$ip" --banners
 ```
 
 Although this option works better with the `--source-ip` option:
 
 ```bash
-masscan <ip> --banners --source-ip <altip> #eg. 192.168.100.100
+masscan "$ip" --banners --source-ip "$altip" 
 ```
 
 You can include a ping scan using the `--ping` option:
 
 ```bash
-masscan <ip> --ping
+masscan "$ip" --ping
 ```
 
 Saving the sent packets in a pcap file can be done using the `--pcap` option:
 
 ```bash
-masscan <ip> --pcap <output_file>
+masscan "$ip" --pcap output_file.pcap
 ```
 
 ### Useful examples
@@ -152,17 +140,17 @@ masscan <ip> --pcap <output_file>
 - **Quick port identification:**
 
 ```bash
-masscan <ip>/<subnet> -p 0-65535 --rate 1000000 --open-only --http-user-agent \
+masscan "$ip/$subnet" -p 0-65535 --rate 1000000 --open-only --http-user-agent \
 "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"\
- -oL <output_file>
+ -oL output_file.list
 ```
 
 - **Mutiple targets specific scan:**
 
 ```bash
-masscan <target1> <target2> <target3> -p 80,433 --rate 100000 --banners --open-only\
+masscan "$target1" "$target2" "$target3" -p 80,433 --rate 100000 --banners --open-only \
 --http-user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"\
---source-ip <altip> -oL <output_file> 
+--source-ip "$altip" -oL output_file.pcap 
 ```
 
 ## Nmap

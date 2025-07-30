@@ -132,7 +132,7 @@ Once you have captured the handshake, you can crack the WPA/WPA2 key using a
 wordlist. You can use the following command to crack the key:
 
 ```bash
-aircrack-ng -w <wordlist> capture.pcap
+aircrack-ng -w wordlist.txt capture.pcap
 ```
 
 This will attempt to crack the WPA/WPA2 key using the wordlist provided. If

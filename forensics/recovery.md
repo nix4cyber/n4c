@@ -28,7 +28,7 @@ File carving is a technique used to recover files from a disk image or raw data 
 To recover partitions from a media image or repair a filesystem image, run the following command:
 
 ```bash
-testdisk <image_file>
+testdisk file.img
 ```
 
 To give multiple Encase images as input, you can use the following command:
@@ -52,7 +52,7 @@ If you have any questions about how to use TestDisk, you can refer to the [TestD
 To recover files from a media image, you can use the following command:
 
 ```bash
-photorec <image_file>
+photorec file.img
 ```
 
 To give multiple Encase images as input, you can use the following command:
@@ -64,7 +64,6 @@ photorec 'image.???'
 Then, choose the disk you want to recover files from, select the partition that holds the lost files to then start the recovery.
 
 If you have any questions about how to use PhotoRec, you can refer to the [PhotoRec documentation](https://www.cgsecurity.org/wiki/PhotoRec_Step_By_Step).
-
 
 ## Disk Imaging
 
@@ -81,20 +80,19 @@ Disk imaging is the process of creating a bit-by-bit copy of a storage device, s
 To use ddrescue, you can run the following command:
 
 ```bash
-ddrescue -d <source> <output> <mapfile>
+ddrescue -d "$source" "$output" file.map
 ```
 
-Where `<source>` is the device or file you want to recover data from (e.g. `/dev/sda`), `<output>` is the file or device where you want to save the recovered data, and `<mapfile>` is a file that keeps track of the progress of the recovery.
+Where `source` is the device or file you want to recover data from (e.g. `/dev/sda`), `output` is the file or device where you want to save the recovered data, and `file.map` is a file that keeps track of the progress of the recovery.
 
 Then define the starting position and maximum recovery size of the execution :
 
 ```bash
-ddrescue -i<starting_size> -s<max_recovery_size> <source> <output> <mapfile>
+ddrescue -i"$starting_size" -s"$max_recovery_size" "$source" "$output" file.map
 ```
 
 This will start the recovery from the specified position and limit the maximum size of the recovered data.
 If you need more information about how to use ddrescue, you can refer to the [GNU ddrescue manual](https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html).
-
 
 ## Honourable Mentions
 

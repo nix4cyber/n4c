@@ -47,7 +47,16 @@ parameters.
 katana -c 15 -p 15 -u $target > output
 ```
 
-### Fuff
+## Subdomain discovery
+
+### Dmarc
+
+DMARC can reveal more domains associated with a target.
+
+Go to `dmarc.live/info/yourTarget.com`, it allows you to find domains using the
+same DMARC record.
+
+## Fuff
 
 **Fuff (or ffuf)** is a fast web fuzzer written in Go, mainly used in
 cybersecurity to discover hidden directories, files, API endpoints, subdomains,

@@ -254,6 +254,24 @@ aircrack-ng -w "$wordlist" output.pcap
 This will attempt to crack the WPA3 key using the wordlist provided. If
 successful, it will display the WPA3 key in the terminal.
 
+## WPS Bruteforce
+
+**WPS bruteforce** is an attack targeting the **Wi-Fi Protected Setup (WPS)**
+protocol, which was designed to make connecting devices to a Wi-Fi network
+easier (via an 8-digit PIN). The problem: the WPS PIN can be brute-forced
+because the keyspace is small and split into two parts (first 4 digits + last 3
+digits, the last digit is a checksum). Once the PIN is found, the WPA/WPA2
+passphrase can be recovered, giving full access to the Wi-Fi network.
+
+This attack requires the target router to have **WPS enabled**
+
+Two tool for WPS bruteforce:
+
+```bash
+reaver -i "$interface" -b "$bssid"
+bully "$interface" -b "$bssid" -c "$channel"
+```
+
 ## Resetting the interface
 
 Once you are done with the cracking, you can reset your wifi interface to its

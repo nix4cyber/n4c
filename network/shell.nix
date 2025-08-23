@@ -1,5 +1,8 @@
-{ pkgs ? import <nixpkgs> { config = { allowUnfree = false; }; }, utils, ... }:
-let
+{
+  pkgs ? import <nixpkgs> {config = {allowUnfree = false;};},
+  utils,
+  ...
+}: let
   sources = [
     (pkgs.fetchFromGitHub {
       owner = "nix4cyber";
@@ -19,16 +22,18 @@ let
     nmap
     wireshark
     tshark
+    bully
+    reaverwps
     #python312Packages.impacket
   ];
+in
+  pkgs.mkShell {
+    name = "network";
+    nativeBuildInputs = packages;
 
-in pkgs.mkShell {
-  name = "network";
-  nativeBuildInputs = packages;
-
-  shellHook = ''
-    ${utils.printHeader "Network"}
-    ${utils.linkSources sources}
-    ${utils.printPackageList packages}
-  '';
-}
+    shellHook = ''
+      ${utils.printHeader "Network"}
+      ${utils.linkSources sources}
+      ${utils.printPackageList packages}
+    '';
+  }

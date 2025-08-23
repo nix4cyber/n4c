@@ -14,7 +14,7 @@
     curl
     instaloader
     trufflehog
-    inputs.gh-recon.defaultPackage.${pkgs.system}
+    inputs.github-recon.defaultPackage.${pkgs.system}
   ];
 in
   pkgs.mkShell {

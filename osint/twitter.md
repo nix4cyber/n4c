@@ -17,9 +17,22 @@ parent: osint
 
 ---
 
+## Banner last update time
+
+The banner URL includes a Unix timestamp indicating when the banner was last
+updated.
+
+For example:
+`https://pbs.twimg.com/profile_banners/1564326938851921921/1750897704/600x200`
+
+In this case, `1750897704` is the timestamp. You can convert it using
+[https://www.unixtimestamp.com/](https://www.unixtimestamp.com/) or any other
+Unix time converter.
+
 ## Basic Search Operators
 
-Twitter's advanced search functionality provides powerful filtering capabilities for OSINT investigations:
+Twitter's advanced search functionality provides powerful filtering capabilities
+for OSINT investigations:
 
 - **Keywords**: `word1 word2` (tweets containing both words)
 - **Exact phrases**: `"exact phrase"` (tweets with this exact sequence)
@@ -45,7 +58,8 @@ Twitter's advanced search functionality provides powerful filtering capabilities
 ### Temporal and Geographic Filters
 
 - **Date range**: `since:YYYY-MM-DD until:YYYY-MM-DD`
-- **Geolocation**: `geocode:latitude,longitude,radius` (e.g., `geocode:40.7128,-74.0060,5km`)
+- **Geolocation**: `geocode:latitude,longitude,radius` (e.g.,
+  `geocode:40.7128,-74.0060,5km`)
 - **Near location**: `near:"Location Name"`
 - **Within radius**: `near:"City" within:15km`
 - **Language**: `lang:code` (e.g., `lang:en` for English)
@@ -62,20 +76,27 @@ Twitter's advanced search functionality provides powerful filtering capabilities
 
 ## Practical Search Combinations
 
-- **Content from a user within a date range**: `from:username since:2023-01-01 until:2023-12-31`
+- **Content from a user within a date range**:
+  `from:username since:2023-01-01 until:2023-12-31`
 
-- **Geolocated tweets about a topic**: `near:"London, UK" within:25km "protest" since:2023-06-01`
+- **Geolocated tweets about a topic**:
+  `near:"London, UK" within:25km "protest" since:2023-06-01`
 
-- **High-engagement tweets about a topic**: `"artificial intelligence" min_retweets:100 lang:en -filter:retweets`
+- **High-engagement tweets about a topic**:
+  `"artificial intelligence" min_retweets:100 lang:en -filter:retweets`
 
-- **Media shared by a specific user**: `from:username filter:media -filter:retweets`
+- **Media shared by a specific user**:
+  `from:username filter:media -filter:retweets`
 
-- **Conversations between specific users**: `from:username1 to:username2 OR from:username2 to:username1`
+- **Conversations between specific users**:
+  `from:username1 to:username2 OR from:username2 to:username1`
 
-- **Link sharing on a topic by verified users**: `"climate change" filter:links filter:verified since:2023-01-01`
+- **Link sharing on a topic by verified users**:
+  `"climate change" filter:links filter:verified since:2023-01-01`
 
 ## Access Methods
 
 - **Graphical interface**: Access via `https://twitter.com/search-advanced`
 
-Remember that all Twitter searches should comply with Twitter's Terms of Service and appropriate legal frameworks for your jurisdiction.
+Remember that all Twitter searches should comply with Twitter's Terms of Service
+and appropriate legal frameworks for your jurisdiction.

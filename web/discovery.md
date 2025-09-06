@@ -116,3 +116,155 @@ site:http://domain.com "Choose a file"
 site:http://domain.com "Click to upload"
 site:http://domain.com "Choose an image to upload"
 ```
+
+## Leaked credentials
+
+### With a browser
+
+1. Open DevTools: In Chrome, navigate to the site you're inspecting, then open
+   Developer Tools with Ctrl+Shift+I (Windows/Linux) or Cmd+Option+I (macOS).
+2. Go to Network Tab: Click on the "Network" tab.
+3. Enable Regex Search: Click the regex icon in the filter bar to enable regex
+   mode.
+4. Refresh Page: Refresh the page to load all network requests.
+5. Apply Regex: Paste the given regex into the filter bar to search for patterns
+   indicating leaked credentials.
+
+```
+(
+  (access(_key|_token)?|accessid|accessid_secret|account(_key|_sid)?|
+  admin(_pass(word)?|_user)?|
+  (algolia|aws|gcp|azure|heroku|firebase|github|gitlab|slack|datadog|stripe|twilio|vercel|supabase|sendgrid|cloudinary|cloudflare|bitbucket|npm|netlify|auth0|okta|sentry)_?(api|secret|access)?_?(key|token|id|sid|secret)?|
+  ansible_vault_password|aos_key|
+  api(_key|_secret|_token|Key|Secret|KeySid)?|
+  app_(debug|id|key|secret|log_level)|application(_key|_id|_secret)?|
+  auth(_token|_secret|orization)?|authkey|authsecret|bearer[_ ]?token|
+  bucket(_password|_key)?|
+  cert(_pass(word)?)?|certificate_password|
+  client(_id|_secret)?|
+  codecov_token|consumer_(key|secret)|
+  conn(_string|\.login)?|connection(string)?|
+  credentials?|crypt(_key|_secret)?|
+  db(_password|_passwd|_user(name)?|server)?|
+  deploy(_key|_password|_token)?|
+  docker(_pass(word)?|_key)?|dockerhub(_password)?|
+  encryption_(key|password)|
+  env\.(heroku|sonatype)_(api_key|password)|
+  firebase(_secret|_api_key)?|
+  github(_token|_key|_client_secret)?|gitlab_token|
+  jwt|jwt_secret|json_web_token|
+  keycloak_secret|kubernetes_token|
+  ldap_(password|bindpw)|login(_password|_token)?|
+  mail(_password|_smtp_pass)?|
+  mysql(_password|_user)?|mongo(_password|_user)?|
+  netlify_token|npm(_token|_auth_token)?|
+  oauth(_token|_secret)?|
+  openai_(api_key|secret)?|
+  pass(word)?|passwd|
+  private(_key|_token)?|
+  rds_password|
+  s3(_key|_secret|_access_key_id)?|
+  secret(_key|_token|_id)?|
+  security_token|
+  sendgrid_api_key|
+  ses(_smtp|_access|_secret)?|
+  service(_account|_key|_token)?|
+  slack(_token|_secret|_hook)?|
+  smtp_(pass(word)?|secret)?|
+  sonar_token|
+  ssh(_key|_private_key|_rsa)?|
+  stripe_(secret|token|key)?|
+  supabase(_anon|_service)?_key|
+  symfony_secret|
+  telegram_bot_token|
+  token|
+  travis_token|
+  twilio(_account_sid|_auth_token)?|
+  vault(_token|_secret)?|
+  webhook(_secret|_token)?|
+  zapier_webhook_token
+  )
+  [a-z0-9_\-\.]{0,25}
+)
+```
+
+6. Review Matches: Manually inspect the filtered requests to identify potential
+   leaks.
+
+### Using Burpsuite
+
+1. Launch Burp Suite: Start Burp Suite and configure your browser to route
+   traffic through it.
+2. Browse Your Target: Navigate through your target site and its subdomains to
+   capture traffic in Burp Suite.
+3. Use the Regex in Search:
+   - Go to the "Burp" > "Search" tab.
+   - In the search type, choose "Regular expression".
+   - Paste the following regex:
+
+```
+(?ix)
+\b
+(
+  (access(_key|_token)?|accessid|accessid_secret|account(_key|_sid)?|
+  admin(_pass(word)?|_user)?|
+  (algolia|aws|gcp|azure|heroku|firebase|github|gitlab|slack|datadog|stripe|twilio|vercel|supabase|sendgrid|cloudinary|cloudflare|bitbucket|npm|netlify|auth0|okta|sentry)_?(api|secret|access)?_?(key|token|id|sid|secret)?|
+  ansible_vault_password|aos_key|
+  api(_key|_secret|_token|Key|Secret|KeySid)?|
+  app_(debug|id|key|secret|log_level)|application(_key|_id|_secret)?|
+  auth(_token|_secret|orization)?|authkey|authsecret|bearer[_ ]?token|
+  bucket(_password|_key)?|
+  cert(_pass(word)?)?|certificate_password|
+  client(_id|_secret)?|
+  codecov_token|consumer_(key|secret)|
+  conn(_string|\.login)?|connection(string)?|
+  credentials?|crypt(_key|_secret)?|
+  db(_password|_passwd|_user(name)?|server)?|
+  deploy(_key|_password|_token)?|
+  docker(_pass(word)?|_key)?|dockerhub(_password)?|
+  encryption_(key|password)|
+  env\.(heroku|sonatype)_(api_key|password)|
+  firebase(_secret|_api_key)?|
+  github(_token|_key|_client_secret)?|gitlab_token|
+  jwt|jwt_secret|json_web_token|
+  keycloak_secret|kubernetes_token|
+  ldap_(password|bindpw)|login(_password|_token)?|
+  mail(_password|_smtp_pass)?|
+  mysql(_password|_user)?|mongo(_password|_user)?|
+  netlify_token|npm(_token|_auth_token)?|
+  oauth(_token|_secret)?|
+  openai_(api_key|secret)?|
+  pass(word)?|passwd|
+  private(_key|_token)?|
+  rds_password|
+  s3(_key|_secret|_access_key_id)?|
+  secret(_key|_token|_id)?|
+  security_token|
+  sendgrid_api_key|
+  ses(_smtp|_access|_secret)?|
+  service(_account|_key|_token)?|
+  slack(_token|_secret|_hook)?|
+  smtp_(pass(word)?|secret)?|
+  sonar_token|
+  ssh(_key|_private_key|_rsa)?|
+  stripe_(secret|token|key)?|
+  supabase(_anon|_service)?_key|
+  symfony_secret|
+  telegram_bot_token|
+  token|
+  travis_token|
+  twilio(_account_sid|_auth_token)?|
+  vault(_token|_secret)?|
+  webhook(_secret|_token)?|
+  zapier_webhook_token
+  )
+  [a-z0-9_\-\.]{0,25}
+)
+\s*
+(?:=|:|=>)\s*
+(?:['"`])
+([a-zA-Z0-9_\-=\+/\.]{10,128})
+(?:['"`])
+```
+
+4. Inspect Results: Review the search results for potential leaks.

@@ -44,10 +44,28 @@ own or have permission to check.
   - Config files:
     `site:{target}+filetype:xml+|+filetype:conf+|+filetype:cnf+|+filetype:reg+|+filetype:inf+|+filetype:rdp+|+filetype:cfg+|+filetype:txt+|+filetype:ora+|+filetype:ini`
   - Database files: `site:{target}+filetype:sql+|+filetype:dbf+|+filetype:mdb`
+  - Data files: `site:{target} ext:csv OR ext:xls OR ext:log` or `site:{target} "@gmail.com" ext:csv`
   - Log files: `site:{target}+filetype:log+|filetype:txt` - Backup files:
     `site:{target}+filetype:bkf+|+filetype:bkp+|+filetype:bak+|+filetype:old+|+filetype:backup`
   - Setup files:
     `site:{target}+inurl:readme+|+inurl:license+|+inurl:install+|+inurl:setup+|+inurl:config`
+  - Private files:
+    `site:{target} "internal use only" ( you can replace with "classified", "private", "unauthorised" )`
+  - Sensitive docs:
+    `ext:txt | ext:pdf | ext:xml | ext:xls | ext:xlsx | ext:ppt | ext:pptx | ext:doc | ext:docx intext:“confidential” | intext:“Not for Public Release” | intext:”internal use only” | intext:“do not distribute” site:{target}`
+  - Code leaks: Check for code snippets, secrets, configs
+    ```txt
+    site:pastebin.com "{target}"
+    site:jsfiddle.net "{target}"
+    site:codebeautify.org "{target}"
+    site:codepen.io "{target}"`
+    ```
+  - Cloud File Shares: Find exposed files linked to your target
+    ```txt
+    site:http://drive.google.com "{target}"
+    site:http://docs.google.com inurl:"/d/" "{target}"
+    site:http://dropbox.com/s "{target}"
+    ```
   - Other: `site:{target}+filetype:pdf+|+filetype:xlsx+|+filetype:docx`
 
 - **Social Media & Professional Networks:**
@@ -91,3 +109,7 @@ own or have permission to check.
   word
 - `around(n)` restricts results to pages where two words appear within _n_ words
   of each other
+
+## Sources
+
+- [TakSec's google dorks](https://github.com/TakSec/google-dorks-bug-bounty/)

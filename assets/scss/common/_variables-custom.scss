@@ -1,0 +1,20 @@
+$primary: #7C3AED;
+
+$body-bg-dark: #070707;
+
+$link-color-dark: #7C3AED;
+$button-color-dark: #7C3AED;
+
+:root,
+::backdrop {
+  --sl-color-accent-high: #7C3AED;
+}
+
+[data-bs-theme="dark"] .navbar,
+[data-bs-theme="dark"] .doks-subnavbar {
+  background-color: rgba(10, 10, 10, 0.9) !important;
+}
+
+[data-bs-theme="dark"] .navbar .btn-link:hover {
+  color: #7C3AED !important;
+}

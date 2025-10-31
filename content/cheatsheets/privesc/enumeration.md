@@ -23,7 +23,7 @@ Refer to the [GTFOBins website](https://gtfobins.github.io/) for the full list o
 
 ### LinPEAS
 
-LinPEAS is a script that search for possible paths to escalate privileges on Linux/Unix\*/MacOS hosts.
+[LinPEAS](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS) is a script that search for possible paths to escalate privileges on Linux/Unix\*/MacOS hosts.
 
 ```bash
 curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh

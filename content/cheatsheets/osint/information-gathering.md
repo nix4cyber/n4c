@@ -8,18 +8,18 @@ seo:
 
 ## Command line tools
 
-| **From**  | **Use**                                        |
-| --------- | ---------------------------------------------- |
-| Email     | `holehe $email`                                |
-|           | `ghunt email $email` (for google account)      |
-|           | `github-recon $email` (for github account)     |
-| Domain    | `theHarvester -d $domain -l 100`               |
-|           | `theHarvester -d $domain -l 100 -b all` (full) |
-| Username  | `sherlock $username`                           |
-| Image     | `exiftool $imagePath`                          |
-| Instagram | `instaloader profile $username`                |
-| Github    | `trufflehog github --org=$usernameOrOrg>`      |
-|           | `github-recon $username`                       |
+| **From**  | **Use**                                                                                         |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| Email     | `holehe $email`                                                                                 |
+|           | `ghunt email $email` (for google account)                                                       |
+|           | `github-recon $email` ([link](http://github.com/anotherhadi/github-recon/), for github account) |
+| Domain    | `theHarvester -d $domain -l 100`                                                                |
+|           | `theHarvester -d $domain -l 100 -b all` (full)                                                  |
+| Username  | `sherlock $username`                                                                            |
+| Image     | `exiftool $imagePath`                                                                           |
+| Instagram | `instaloader profile $username`                                                                 |
+| Github    | `trufflehog github --org=$usernameOrOrg>`                                                       |
+|           | `github-recon $username` ([link](http://github.com/anotherhadi/github-recon/))                  |
 
 ## Online tools
 
@@ -54,9 +54,10 @@ seo:
 |            | [OSINT Framework](https://osintframework.com/)         |
 |            | [OSINT Dojo](https://osintdojo.com/)                   |
 
-## Full OSINT Frameworks
+## OSINT Frameworks
 
 - [Recon-ng](https://github.com/lanmaster53/recon-ng) is a modular Python
   framework for automating OSINT collection via many built-in modules
 - [SpiderFoot](https://github.com/smicallef/spiderfoot) is an open-source tool
   aggregating dozens of data sources to profile domains, IPs, or identifiers
+- [Eleakxir](https://github.com/anotherhadi/eleakxir) is a self-hosted search engine for leaked data

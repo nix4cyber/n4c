@@ -15,8 +15,7 @@ For example:
 `https://pbs.twimg.com/profile_banners/1564326938851921921/1750897704/600x200`
 
 In this case, `1750897704` is the timestamp. You can convert it using
-[https://www.unixtimestamp.com/](https://www.unixtimestamp.com/) or any other
-Unix time converter.
+[unixtimestamp.com](https://www.unixtimestamp.com/) or any other Unix time converter.
 
 ## Basic Search Operators
 
@@ -33,6 +32,12 @@ for OSINT investigations:
 - **Mentions in any context**: `@username` (tweets mentioning an account)
 
 ## Advanced Filters
+
+{{<link-card
+  title="Twitter/X Search advanced GUI"
+  description="Graphical User Interface (GUI) for the twitter search advanced functionality"
+  href="https://x.com/search-advanced"
+  target="_blank">}}
 
 ### Engagement Filters
 
@@ -83,9 +88,7 @@ for OSINT investigations:
 - **Link sharing on a topic by verified users**:
   `"climate change" filter:links filter:verified since:2023-01-01`
 
-## Access Methods
-
-- **Graphical interface**: Access via `https://twitter.com/search-advanced`
+## Disclaimer
 
 Remember that all Twitter searches should comply with Twitter's Terms of Service
 and appropriate legal frameworks for your jurisdiction.

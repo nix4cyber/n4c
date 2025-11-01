@@ -6,7 +6,8 @@ seo:
   description: ""
 ---
 
-Dorks also works on Startpage or Duckduckgo.
+[Google](https://google.com) hacking, also named Google dorking, is a hacker technique that uses Google Search and other Google applications to find security holes in the configuration and computer code that websites are using.
+Dorks also works on [Startpage](https://startpage.com) or [Duckduckgo](https://duckduckgo.com).
 
 ## Basics
 
@@ -101,6 +102,7 @@ own or have permission to check.
 - `around(n)` restricts results to pages where two words appear within _n_ words
   of each other
 
-## Sources
+## Ressources
 
 - [TakSec's google dorks](https://github.com/TakSec/google-dorks-bug-bounty/)
+- [Exploit-db Google hacking database](https://www.exploit-db.com/google-hacking-database)

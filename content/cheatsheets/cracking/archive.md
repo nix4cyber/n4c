@@ -23,10 +23,10 @@ The `-p` flag will set initial (starting) password for brute-force searching to 
 - Examples :
 
 ```bash
-fcrackzip -u -D -p /tmp/wordlists/passwords/password.txt ~/file.zip
+fcrackzip -u -D -p /tmp/wordlists/passwords/password.txt archive.zip
 ```
 
-Use the wordlist /tmp/wordlists/passwords/password.txt to try to crack the password of the zip file ~/file.zip.
+Use the wordlist /tmp/wordlists/passwords/password.txt to try to crack the password.
 
 ```bash
 fcrackzip -c a -p aaaaaa sample.zip
@@ -44,16 +44,19 @@ Checks the obscured image test.ppm for all four character passwords.
 
 ### zip2hashcat, rar2hashcat, 7z2hashcat
 
-zip2hashcat is a tool to convert zip files to a hash that can be cracked with hashcat. If the password is different between the files in the arhcive, then it will not work.
+`zip2hashcat` is a tool to convert zip files to a hash that can be cracked with [hashcat](/cheatsheets/hash#hashcat).
+If the password is different between the files in the archive, then it will not work.
 
 ```bash
-zip2hashcat files.zip > hash.txt
+zip2hashcat archive.zip > hash.txt
 ```
 
-Same for rar2hashcat and 7z2hashcat.
+Same for `rar2hashcat` and `7z2hashcat`.
 
 ### zip2john
 
+Same thing for [John the Ripper](/cheatsheets/cracking/hash/#john-the-ripper)
+
 ```bash
-zip2john files.zip > hash.txt
+zip2john archive.zip > hash.txt
 ```

@@ -129,11 +129,11 @@ successful, it will display the WPA/WPA2 key in the terminal. Note that if the
 ESSID is hidden, you will need to use the `-e` option to specify the ESSID when
 cracking the key.
 
-### Option 2 (harder but better)
+### Option 2 (harder but faster)
 
 A way faster and more successful alternative to the previous method is to use
 `hcxdumptool` to capture the handshake or the PMKID and then crack it with
-`hashcat`. This makes it more likely to succeed than the previous method since
+[hashcat](/cheatsheets/cracking/hash#hashcat). This makes it more likely to succeed than the previous method since
 we could only use the handshake with it, and this method allows us to use
 `hashcat` to crack the hash which is way faster than `aircrack-ng`.
 

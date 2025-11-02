@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="nixy logo" src="https://raw.githubusercontent.com/nix4cyber/n4c/main/assets/images/logo.png" width="120px" />
+    <img alt="nixy logo" src="https://raw.githubusercontent.com/nix4cyber/n4c/main/assets/images/logo-transparent.png" width="120px" />
 </div>
 
 # Nix4cyber (n4c)

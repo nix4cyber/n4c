@@ -15,7 +15,7 @@ defines its specific software environment.
 This approach ensures that all dependencies are isolated and consistent,
 allowing users to perform security tasks with a predictable set of tools.
 
-[See available toolkits here](/cheatsheets/home)
+[See available toolkits here](/cheatsheets/cheatsheets)
 
 ## Usage
 

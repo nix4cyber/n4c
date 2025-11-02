@@ -1,6 +1,6 @@
 [[main]]
   name = "Cheat Sheets"
-  url = "/cheatsheets/home"
+  url = "/cheatsheets/cheatsheets"
   weight = 10
 
 [[main]]

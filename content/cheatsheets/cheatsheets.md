@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Cheatsheets"
 description: "The Cheatsheets section is designed to be your indispensable, fast-access knowledge base for every phase of a security engagement, from initial assessment to exploitation."
 weight: 900
 toc: false

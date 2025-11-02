@@ -17,7 +17,7 @@ N4C (**nix4cyber**) is a personal knowledge-base and toolbox for CTF (capture th
 It combines three core components:
 
 - [Nix-based shells](https://n4c.hadi.diy/shells): pre-configured environments for specific security domains (web, cracking, networking, forensic, ...).
-- [Cheat‑sheets](https://n4c.hadi.diy/cheatsheets/home): quick reference guides organized by category.
+- [Cheat‑sheets](https://n4c.hadi.diy/cheatsheets/cheatsheets): quick reference guides organized by category.
 - [CTF write‑ups](https://n4c.hadi.diy/writeups): markdown-formatted reports of challenges we've solved.
 
 All content is served through a static website built with [Hugo](https://gohugo.io/) and the [Doks](https://github.com/DELIGHT-LABS/hugo-theme-doks) (<3) theme, hosted on Netlify. The project is fully open‑source under the MIT license and lives on GitHub.

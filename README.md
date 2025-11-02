@@ -1,9 +1,14 @@
+<div align="center">
+    <img alt="nixy logo" src="https://raw.githubusercontent.com/nix4cyber/n4c/main/assets/images/logo.png" width="120px" />
+</div>
+
 # Nix4cyber (n4c)
 
 > A modular, open‑source toolkit for cyber‑security professionals built with nix & markdown
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/idhere/deploy-status)](https://app.netlify.com/sites/nix4cyber/deploys)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![Hugo](https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white)
+![MIT License](https://img.shields.io/badge/MIT-green?style=for-the-badge)
 
 ## Overview
 

@@ -1,5 +1,7 @@
 ---
 title: "OSINT"
+description: ""
+weight: 100
 seo:
   title: ""
   description: ""

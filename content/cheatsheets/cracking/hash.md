@@ -71,7 +71,16 @@ john --mask="?d?d?d?d" passwords.txt
 
 This command will try to crack the password using a mask attack with 4 digits, ?d representing a digit in the mask.
 
-### Crackstation
+### Online Hash Cracker
 
-[Crackstation](https://crackstation.net/) is a free online hash cracking service that can obtain the passwords of various hash types by using a large database of precomputed hashes. It is useful for quickly cracking hashes without the need to set up your own cracking environment.
-Recommended for beginner users or for quick tests.
+{{<link-card
+  title="CrackStation"
+  description="CrackStation is a free online hash cracking service that can obtain the passwords of various hash types by using a large database of precomputed hashes. It is useful for quickly cracking hashes without the need to set up your own cracking environment."
+  href="https://crackstation.net/"
+  target="_blank">}}
+
+{{<link-card
+title="Hashes.com (w/ salt)"
+description="Hashes.com is a hash lookup service. This allows you to input an MD5, SHA-1, Vbulletin, Invision Power Board, MyBB, Bcrypt, Wordpress, SHA-256, SHA-512, MYSQL5 etc hash and search for its corresponding plaintext in our database of already-cracked hashes."
+href="https://hashes.com/"
+target="_blank">}}

@@ -1,5 +1,7 @@
 ---
 title: "Web"
+description: ""
+weight: 100
 seo:
   title: ""
   description: ""

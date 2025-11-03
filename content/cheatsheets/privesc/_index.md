@@ -1,5 +1,7 @@
 ---
 title: "Privesc"
+description: ""
+weight: 100
 seo:
   title: ""
   description: ""

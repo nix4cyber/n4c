@@ -1,5 +1,7 @@
 ---
 title: "Stegano"
+description: ""
+weight: 100
 seo:
   title: ""
   description: ""

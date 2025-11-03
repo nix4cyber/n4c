@@ -1,5 +1,7 @@
 ---
 title: "Network"
+weight: 100
+description: ""
 seo:
   title: ""
   description: ""

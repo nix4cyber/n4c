@@ -8,6 +8,7 @@
   packages = with pkgs; [];
 in
   pkgs.mkShell {
+    name = "reverse";
     nativeBuildInputs = packages;
 
     shellHook = ''

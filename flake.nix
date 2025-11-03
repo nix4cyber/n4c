@@ -43,6 +43,8 @@
           shellHook =
             # bash
             ''
+              [[ -f "package.json" ]] || { echo "You're not in the N4C root folder"; exit 1; }
+              [[ -d "node_modules" ]] || ${pkgs.bun}/bin/bun install
               ${pkgs.bun}/bin/bun dev
               exit
             '';

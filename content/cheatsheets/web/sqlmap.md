@@ -2,11 +2,11 @@
 title: "SQLmap"
 description: "SQLmap is an open-source tool that automates the detection and exploitation of SQL Injection vulnerabilities. It is the essential tool for web penetration testing."
 seo:
-  title: ""
-  description: "SQLmap is an open-source tool that automates the detection and exploitation of SQL Injection vulnerabilities. It is the essential tool for web penetration testing."
+  title: "SQLmap Cheatsheet for SQL Injection Testing and Exploitation"
+  description: "Essential reference guide for using SQLmap. Covers basic database enumeration, injection techniques (Boolean, Union, Time-based), WAF evasion (tamper scripts), and advanced file access methods for ethical security auditing."
 ---
 
-SQLmap is an open-source tool that automates the detection and exploitation of SQL Injection vulnerabilities. It is the essential tool for web penetration testing.
+SQLmap is an [open-source tool](https://github.com/sqlmapproject/sqlmap) that automates the detection and exploitation of SQL Injection vulnerabilities. It is the essential tool for web penetration testing.
 
 ## Basic Commands
 

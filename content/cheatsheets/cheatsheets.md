@@ -4,8 +4,8 @@ description: "The Cheatsheets section is designed to be your indispensable, fast
 weight: 900
 toc: false
 seo:
-  title: "Cybersecurity Cheatsheets"
-  description: "The Cheatsheets section is designed to be your indispensable, fast-access knowledge base for every phase of a security engagement, from initial assessment to exploitation."
+  title: "Cybersecurity Cheatsheets: Pentesting & Ethical Hacking Reference"
+  description: "Your comprehensive, fast-access knowledge base for cybersecurity. Essential cheatsheets cover all phases of security engagement, including Cracking, Forensics, Network, OSINT, Privilege Escalation, Web, and Reverse Engineering."
 ---
 
 The Cheatsheets section is designed to be your indispensable, fast-access knowledge base for every phase of a security engagement, from initial assessment to exploitation.

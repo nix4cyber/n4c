@@ -1,9 +1,9 @@
 ---
 title: "Google Dorks"
-description: ""
+description: "Essential cheatsheet for Google Dorking, using advanced search operators to perform Open Source Intelligence (OSINT) and identify publicly exposed information or misconfigurations on target websites."
 seo:
-  title: ""
-  description: ""
+  title: "Google Dorking Cheatsheet for OSINT and Security Testing"
+  description: "A comprehensive reference for advanced Google search operators (Dorks). Learn to use 'site:', 'inurl:', 'filetype:', and more for information gathering, finding leaked files, and identifying security misconfigurations ethically."
 ---
 
 [Google](https://google.com) hacking, also named Google dorking, is a hacker technique that uses Google Search and other Google applications to find security holes in the configuration and computer code that websites are using.

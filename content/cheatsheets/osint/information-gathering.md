@@ -1,10 +1,12 @@
 ---
 title: "Information Gathering"
-description: ""
+description: "Essential cybersecurity cheatsheet for Information Gathering and Open Source Intelligence (OSINT). Discover data related to emails, domains, usernames, and images using both command line and online tools."
 seo:
-  title: ""
-  description: ""
+  title: "OSINT & Information Gathering Cheatsheet for Security Audits"
+  description: "Comprehensive reference for Open Source Intelligence (OSINT) techniques. Includes command-line tools (e.g., theHarvester, sherlock) and online resources (e.g., Shodan, IntelX, Whois) to ethically collect publicly available data for security purposes."
 ---
+
+**Information Gathering**, often referred to as **Open Source Intelligence (OSINT)** in the context of ethical hacking, is the systematic collection and analysis of publicly available data about a target, providing the foundational knowledge necessary to identify potential vulnerabilities and craft targeted security assessments.
 
 ## Command line tools
 

@@ -1,10 +1,12 @@
 ---
 title: "Discovery"
-description: ""
+description: "Essential cheatsheet for cybersecurity discovery techniques: directory, subdomain, and file upload vulnerability finding, plus leaked credentials detection. Covers tools like Dirb, Gobuster, Fuff, and Burp Suite."
 seo:
-  title: ""
-  description: ""
+  title: "Cybersecurity Discovery Cheatsheet: Reconnaissance & Information Gathering"
+  description: "A comprehensive cheatsheet for penetration testing and bug bounty hunters focusing on Discovery. Learn to find hidden directories, enumerate subdomains, use Fuff for fuzzing, and detect leaked credentials in web traffic (DevTools/Burp Suite)."
 ---
+
+**Discovery**, often known as **Reconnaissance** or **Information Gathering**, is the crucial initial phase in any security assessment or penetration test where the objective is to passively and actively find targets, map network topology, enumerate subdomains, locate hidden files, and identify potential points of entry before attempting exploitation.
 
 ## Directory discovery
 

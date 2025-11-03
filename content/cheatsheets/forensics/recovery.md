@@ -1,9 +1,9 @@
 ---
 title: "Recovery"
-description: ""
+description: "Essential data recovery techniques and tools for digital forensics. Learn file carving with TestDisk and PhotoRec, disk imaging with dd and ddrescue to recover deleted files, lost partitions, and damaged filesystems from storage devices."
 seo:
-  title: ""
-  description: ""
+  title: "Data Recovery Guide - File Carving, Disk Imaging & Partition Recovery"
+  description: "Complete data recovery tutorial covering TestDisk for partition recovery, PhotoRec for file carving, ddrescue for damaged drive imaging, and disk forensics techniques to recover deleted files from FAT, NTFS, ext2 filesystems and corrupted storage devices."
 ---
 
 ## File Carving

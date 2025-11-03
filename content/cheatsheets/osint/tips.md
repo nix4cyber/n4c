@@ -1,9 +1,9 @@
 ---
 title: "Tips"
-description: ""
+description: "A cheatsheet of practical tips and unconventional methods for Open Source Intelligence (OSINT), focusing on advanced data visualization, information leakage detection, and utilizing web archives for historical data."
 seo:
-  title: ""
-  description: ""
+  title: "Advanced OSINT Tips and Techniques Cheatsheet"
+  description: "Essential guide to non-standard Open Source Intelligence methods, including using visualization tools to map data relationships, safely testing for account information leakage via 'Forgot Password' functions, and effectively searching web archives."
 ---
 
 ## Visualisation

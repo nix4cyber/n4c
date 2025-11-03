@@ -1,9 +1,9 @@
 ---
-title: "Traffic"
-description: ""
+title: "Traffic Analysis"
+description: "Essential cheatsheet for cybersecurity traffic analysis, covering real-time capture and deep packet inspection using leading network analysis tools. Learn to filter, extract fields, and perform statistical analysis."
 seo:
-  title: ""
-  description: ""
+  title: "Network Traffic Analysis Cheatsheet for Security Professionals"
+  description: "A practical reference guide for network forensics, incident response, and penetration testing. Includes commands for packet capturing, applying display filters, field extraction, and performing statistical analysis on captured network data."
 ---
 
 ## Wireshark

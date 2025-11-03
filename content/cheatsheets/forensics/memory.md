@@ -1,9 +1,9 @@
 ---
 title: "Memory"
-description: ""
+description: "Complete Volatility 2 framework guide for memory forensics and RAM analysis. Extract digital artifacts from memory dumps including processes, network connections, registry data, passwords, and malware indicators for incident response and forensic investigations."
 seo:
-  title: ""
-  description: ""
+  title: "Memory Forensics Guide - Volatility 2 RAM Analysis & Artifact Extraction"
+  description: "Comprehensive Volatility 2 tutorial for digital forensics covering process analysis, memory dumping, network scanning, registry examination, hash extraction, malware detection with malfind, and Yara signatures for incident response and CTF challenges."
 ---
 
 ## Volatility 2

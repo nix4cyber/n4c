@@ -1,9 +1,9 @@
 ---
 title: "Wireless"
-description: ""
+description: "Comprehensive cheatsheet for learning fundamental wireless security concepts, including setting up monitor mode, network scanning, and understanding legacy WEP, WPA/WPA2, and WPS vulnerabilities for educational and defensive purposes."
 seo:
-  title: ""
-  description: ""
+  title: "Wireless Network Security & Defense Cheatsheet (802.11 Protocols)"
+  description: "Essential guide for security professionals and students to understand the setup and principles of 802.11 (Wi-Fi) security assessments. Learn about monitor mode, key cracking methodologies (WPA/WPA2), and WPS vulnerabilities to improve network defense."
 ---
 
 ## Setup

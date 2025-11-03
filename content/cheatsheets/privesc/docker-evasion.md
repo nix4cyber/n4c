@@ -1,9 +1,9 @@
 ---
-title: "Docker evasion"
-description: "Docker Evasion refers to the techniques and exploits used by attackers to escape the confines of a Docker container and gain unauthorized access or elevated privileges on the host system"
+title: "Docker Evasion"
+description: "Docker Evasion refers to the techniques and exploits used by attackers to escape the confines of a Docker container and gain unauthorized access or elevated privileges on the host system."
 seo:
-  title: "Docker Evasion"
-  description: "Docker Evasion refers to the techniques and exploits used by attackers to escape the confines of a Docker container and gain unauthorized access or elevated privileges on the host system"
+  title: "Docker Container Evasion and Privilege Escalation Cheatsheet"
+  description: "Essential guide to understanding and testing Docker container evasion techniques. Covers exploits used to break out of the containerized environment and gain unauthorized access or root privileges on the host system."
 ---
 
 Docker Evasion refers to the techniques and exploits used by attackers to escape the confines of a [Docker container](https://www.docker.com/) and gain unauthorized access or elevated privileges on the host system (the machine running the Docker daemon and containers).

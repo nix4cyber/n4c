@@ -1,12 +1,12 @@
 ---
-title: "Recon"
-description: ""
+title: "Scanning"
+description: "A comprehensive cybersecurity cheatsheet for network and port scanning. Covers fast scanning with Masscan and detailed analysis with Nmap, including target specification, scan types, version detection, and output formats."
 seo:
-  title: ""
-  description: ""
+  title: "Network and Port Scanning Cheatsheet (Masscan & Nmap) for Security"
+  description: "Essential reference guide for security professionals on network and port scanning. Quick commands for Masscan and in-depth techniques for Nmap (Host Discovery, Scan Types, Version Detection, Evasion, and NSE scripts)."
 ---
 
-## masscan
+## Masscan
 
 Masscan is a fast port scanner that can be used to scan large networks quickly. It is capable of scanning the entire Internet in under 5 minutes, making it one of the fastest port scanners available.
 

@@ -1,10 +1,12 @@
 ---
-title: "Privilege escalation"
-description: ""
+title: "Privilege Escalation"
+description: "Essential cybersecurity cheatsheet for Privilege Escalation techniques on Linux and Windows systems. Covers command discovery (sudo), automated tools (LinPEAS), and exploitation resource databases (GTFOBins, LOLBAS)."
 seo:
-  title: ""
-  description: ""
+  title: "Privilege Escalation Cheatsheet: Linux and Windows Techniques"
+  description: "Comprehensive guide for security professionals on privilege escalation. Learn to audit Linux sudo rights, use automated scripts like LinPEAS, and leverage resources such as GTFOBins and LOLBAS for exploiting binaries on Linux and Windows."
 ---
+
+**Privilege Escalation**, often abbreviated as **Privesc**, is the crucial process in a penetration test or cyberattack where an unauthorized user attempts to exploit system vulnerabilities or misconfigurations to gain elevated access (e.g., from a standard user to an administrator or root user) to restricted resources or data on a compromised system.
 
 ## Linux
 

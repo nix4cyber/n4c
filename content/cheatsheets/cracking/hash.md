@@ -1,9 +1,9 @@
 ---
 title: "Hash"
-description: ""
+description: "Complete guide to hash identification and password cracking. Learn to identify hash types with Haiti and CyberChef, then crack them using Hashcat and John the Ripper with dictionary attacks, brute-force methods, and rule-based techniques."
 seo:
-  title: ""
-  description: ""
+  title: "Hash Cracking Guide - Hashcat, John the Ripper & Hash Identification"
+  description: "Comprehensive hash cracking tutorial covering hash type identification with Haiti, password recovery using Hashcat and John the Ripper, optimization techniques, attack modes, and online hash lookup services like CrackStation for MD5, SHA-1, bcrypt and more."
 ---
 
 ## Hash identification
@@ -71,7 +71,7 @@ john --mask="?d?d?d?d" passwords.txt
 
 This command will try to crack the password using a mask attack with 4 digits, ?d representing a digit in the mask.
 
-### Online Hash Cracker
+## Online Hash Cracker
 
 {{<link-card
   title="CrackStation"

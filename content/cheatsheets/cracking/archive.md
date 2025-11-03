@@ -1,9 +1,9 @@
 ---
 title: "Archive"
-description: ""
+description: "Comprehensive guide for cracking password-protected archives including ZIP, RAR, and 7z files. Learn how to use fcrackzip, zip2john, and hashcat conversion tools to recover passwords from encrypted compressed files."
 seo:
-  title: ""
-  description: ""
+  title: "Archive Password Cracking Guide - ZIP, RAR, 7z Password Recovery"
+  description: "Complete archive cracking tutorial using fcrackzip, zip2hashcat, rar2hashcat, 7z2hashcat, and zip2john. Dictionary and brute-force attack methods for recovering passwords from encrypted compressed files with hashcat and John the Ripper."
 ---
 
 ## Zip cracking

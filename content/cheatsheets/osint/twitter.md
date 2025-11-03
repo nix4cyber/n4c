@@ -1,9 +1,9 @@
 ---
-title: "Twitter/X"
-description: ""
+title: "Twitter/X OSINT"
+description: "Essential cheatsheet for Open Source Intelligence (OSINT) on Twitter/X, detailing advanced search operators, engagement filters, and temporal/geographic capabilities for effective data collection."
 seo:
-  title: ""
-  description: ""
+  title: "Advanced Twitter/X Search Operators Cheatsheet for OSINT"
+  description: "Comprehensive guide to leveraging Twitter/X's advanced search functionality for security research and information gathering. Includes filters for keywords, accounts, dates, geolocation, media, and minimum engagement metrics."
 ---
 
 ## Banner last update time

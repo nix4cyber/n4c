@@ -1,9 +1,9 @@
 ---
 title: "Sock Puppets"
-description: ""
+description: "Essential cheatsheet on creating and managing Sock Puppets (fake identities) for ethical security research and Open Source Intelligence (OSINT), focusing on maintaining separation from personal data and bypassing common verification."
 seo:
-  title: ""
-  description: ""
+  title: "Sock Puppets Cheatsheet for OSINT and Identity Management"
+  description: "A practical guide to generating fictitious personas for security testing and information gathering. Includes tools for creating fake personal data, images, and methods to bypass phone number verification while maintaining operational security."
 ---
 
 Sock puppets are fake identities use to gather information from a target.

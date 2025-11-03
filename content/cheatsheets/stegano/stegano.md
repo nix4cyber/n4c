@@ -1,9 +1,9 @@
 ---
-title: "Stegano"
-description: ""
+title: "Steganography"
+description: "Essential cheatsheet for Steganography, covering automated tools and techniques used to detect hidden data within digital media (images, audio, video) for forensic and security analysis."
 seo:
-  title: ""
-  description: ""
+  title: "Steganography Cheatsheet: Detection and Extraction Techniques"
+  description: "Comprehensive guide for security professionals on steganography detection. Includes information on automated tools like StegoScan for finding hidden information in files, images, and web content during security audits or incident response."
 ---
 
 ## Automated tools

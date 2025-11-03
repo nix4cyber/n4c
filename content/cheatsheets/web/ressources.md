@@ -1,10 +1,16 @@
 ---
-title: "Ressources"
-description: ""
+title: "Resources"
+description: "A foundational cheatsheet category providing a curated list of external links, tools, official documentation, and valuable references essential for cybersecurity research and ethical hacking."
 seo:
-  title: ""
-  description: ""
+  title: "Cybersecurity Resources and Essential Cheatsheets"
+  description: "Comprehensive collection of external resources and links, including open-source tools, official documentation, reference materials, and community websites vital for learning and practicing cybersecurity techniques."
 ---
+
+{{<link-card
+  title="PayloadsAllTheThings"
+  description="A list of useful payloads and bypasses for Web Application Security. Feel free to improve with your payloads and techniques!"
+  href="https://swisskyrepo.github.io/PayloadsAllTheThings"
+  target="_blank">}}
 
 {{<link-card
   title="Web Penetration Testing Checklist"

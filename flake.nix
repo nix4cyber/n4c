@@ -19,11 +19,8 @@
 
     # Filter to only include actual files ending with ".nix" (e.g., web.nix, forensics.nix)
     shellNames =
-      builtins.filter (name:
-        builtins.match ".*\\.nix" name
-        != null
-        && builtins.isPath (./shells + "/${name}")) # Ensure it's a file path
-      
+      builtins.filter
+      (name: pkgs.lib.hasSuffix ".nix" name && name != "utils.nix")
       allShellFiles;
 
     # Function to load a shell
@@ -48,6 +45,18 @@
               ${pkgs.bun}/bin/bun dev
               exit
             '';
+        };
+      }
+      // {
+        prompt = pkgs.mkShell {
+          nativeBuildInputs = [pkgs.tree];
+          shellHook = ''
+            echo "This is a static site built with Hugo using the Doks theme. To understand the architecture and project goals, first read ./README.md.
+            The content below lists all .nix and .md files in the project.
+            Each file is presented with its relative path in the format '=== relative/path/file ===' followed by its complete content.";
+            find . -type f \( -name "*.nix" -o -name "*.md" \) -not -path '*/node_modules/*' -not -path '*/.git/*' | sort | while read -r file; do echo -e "\n=== $file ===\n"; cat "$file"; done
+            exit
+          '';
         };
       };
 

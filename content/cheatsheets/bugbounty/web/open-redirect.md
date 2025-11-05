@@ -9,7 +9,12 @@ seo:
 ## How to find entry points to test?
 
 - Caido HTTP history (look at URLs with parameters)
-- [Google dorking](/cheatsheets/osint/google-dorks) (ex: inurl:redirectUrl=http site:target.com)
+- [Google dorking](/cheatsheets/osint/google-dorks)
+
+  ```txt
+  site:target.com inurl:(go= OR return= OR r_url= OR returnUrl= OR returnUri= OR locationUrl= OR goTo= OR return_url= OR next= OR continue= OR checkout_url= OR dest= OR destination= OR image_url= OR redirect= OR redir= OR return_path= OR return_to= OR rurl= OR target= OR view=)
+  ```
+
 - Functionalities usually associated with redirects:
   - Login, Logout, Register & Password reset pages
   - Change site language
@@ -19,7 +24,7 @@ seo:
 
 ## Payload
 
-<!-- TODO: Caido & Ffuf instruction -->
+<!-- TODO: Caido & Ffuf instructions -->
 
 {{< details "Show the payload" >}}
 

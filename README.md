@@ -6,9 +6,9 @@
 
 > A modular, open‑source toolkit for cyber‑security professionals built with nix & markdown
 
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 ![Hugo](https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white)
 ![MIT License](https://img.shields.io/badge/MIT-green?style=for-the-badge)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/36717393-ff25-4e1f-b33a-8f5f2ed4c0e6/deploy-status)](https://app.netlify.com/projects/nix4cyber/deploys)
 
 ## Overview
 

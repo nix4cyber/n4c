@@ -19,3 +19,8 @@ To find email addresses and phone numbers associated with an account, you can cl
 
 - **Wayback Machine** (<https://web.archive.org>) stores over 618 billion web captures
 - **Archive.today** (<https://archive.ph>) creates on-demand snapshots, including for JS-heavy sites, with both a functional page and screenshot version
+
+## Bookmarklets
+
+- https://github.com/K2SOsint/Bookmarklets
+- https://tools.myosint.training/

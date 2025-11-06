@@ -17,7 +17,7 @@ File carving is a technique used to recover files from a disk image or raw data 
 To recover partitions from a media image or repair a filesystem image, run the following command:
 
 ```bash
-testdisk file.img
+testdisk "$system_image"
 ```
 
 To give multiple Encase images as input, you can use the following command:
@@ -41,7 +41,7 @@ If you have any questions about how to use TestDisk, you can refer to the [TestD
 To recover files from a media image, you can use the following command:
 
 ```bash
-photorec file.img
+photorec "$system_image"
 ```
 
 To give multiple Encase images as input, you can use the following command:
@@ -69,15 +69,15 @@ Disk imaging is the process of creating a bit-by-bit copy of a storage device, s
 To use ddrescue, you can run the following command:
 
 ```bash
-ddrescue -d "$source" "$output" file.map
+ddrescue -d "$source" "$output" "$map_file"
 ```
 
-Where `source` is the device or file you want to recover data from (e.g. `/dev/sda`), `output` is the file or device where you want to save the recovered data, and `file.map` is a file that keeps track of the progress of the recovery.
+Where `source` is the device or file you want to recover data from (e.g. `/dev/sda`), `output` is the file or device where you want to save the recovered data, and `"$map_file"` is a file that keeps track of the progress of the recovery.
 
 Then define the starting position and maximum recovery size of the execution :
 
 ```bash
-ddrescue -i"$starting_size" -s"$max_recovery_size" "$source" "$output" file.map
+ddrescue -i"$starting_size" -s"$max_recovery_size" "$source" "$output" "$map_file"
 ```
 
 This will start the recovery from the specified position and limit the maximum size of the recovered data.

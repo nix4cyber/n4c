@@ -121,7 +121,7 @@ masscan "$ip" --ping
 Saving the sent packets in a pcap file can be done using the `--pcap` option:
 
 ```bash
-masscan "$ip" --pcap output_file.pcap
+masscan "$ip" --pcap "$output_pcap"
 ```
 
 ### Useful examples
@@ -139,7 +139,7 @@ masscan "$ip/$subnet" -p 0-65535 --rate 1000000 --open-only --http-user-agent \
 ```bash
 masscan "$target1" "$target2" "$target3" -p 80,433 --rate 100000 --banners --open-only \
 --http-user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"\
---source-ip "$altip" -oL output_file.pcap
+--source-ip "$altip" -oL "$output_pcap"
 ```
 
 ## Nmap
@@ -169,7 +169,7 @@ nmap "$ip/$subnet"
 Finally, if you want to scan a list of IP addresses from a file, you can use the following command:
 
 ```bash
-nmap -iL ips.txt
+nmap -iL "$ip_list"
 ```
 
 ### Host discovery
@@ -346,7 +346,7 @@ Some useful scripts include:
 
 ```bash
 nmap -n -Pn -p 80 -open -sV -vvv -script banner,http-title -iR 1000 # searches random web servers
-nmap -script whois* domain.com # whois lookup
+nmap -script whois* "$domain" # whois lookup
 ```
 
 Vulnerability scanning examples:
@@ -361,19 +361,19 @@ nmap -p80 -script http-unsafe-output-escaping "$ip"
 Nmap can be used to output the scan results in various formats. You can use the `-oN` option to output the results in normal format:
 
 ```bash
-nmap "$ip" -oN output_file.txt
+nmap "$ip" -oN "$txt_output"
 ```
 
 You can use the `-oX` option to output the results in XML format:
 
 ```bash
-nmap "$ip" -oX output_file.xml
+nmap "$ip" -oX "$xml_output"
 ```
 
 You can use the `-oG` option to output the results in grepable format:
 
 ```bash
-nmap "$ip" -oG output_file.grep
+nmap "$ip" -oG "$grep_output"
 ```
 
 And there are many more formats available, feel free to check the [Nmap documentation](https://nmap.org/book/man-output.html) for more information.

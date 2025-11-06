@@ -43,7 +43,7 @@ You can specify a duration with the `-a` option (in seconds), specify a file to 
 Example :
 
 ```bash
-tshark -i "$interface" -a duration:60 -w capture.pcap -f "port bootpc"
+tshark -i "$interface" -a duration:60 -w "$pcap_file" -f "port bootpc"
 ```
 
 ### Working with Capture Files
@@ -51,25 +51,25 @@ tshark -i "$interface" -a duration:60 -w capture.pcap -f "port bootpc"
 tshark is commonly used to analyze previously saved packet capture files (`.pcap` or `.pcapng`). To read a capture file, use the `-r` option followed by the filename:
 
 ```bash
-tshark -r capture.pcap
+tshark -r "$pcap_file"
 ```
 
 Use the `-Y` option to apply a display filter to the packets in the capture file. For example, to filter for HTTP GET requests in a capture file, you can use:
 
 ```bash
-tshark -r capture.pcap -Y "http.request.method==GET"
+tshark -r "$pcap_file" -Y "http.request.method==GET"
 ```
 
 Or to only display ICMP packets, specifically echo requests (type 8):
 
 ```bash
-tshark -r capture.pcap -Y "icmp.type==8"
+tshark -r "$pcap_file" -Y "icmp.type==8"
 ```
 
 There are also capture filters that can be applied when reading a file. For example, to filter for packets from a specific IP address:
 
 ```bash
-tshark -r capture.pcap -f "$ip"
+tshark -r "$pcap_file" -f "$ip"
 ```
 
 Or to capture ICMPv6 traffic between two specific IP addresses on a specific interface:
@@ -97,7 +97,7 @@ tshark -i "$interface" -f "udp port 53" -n -T fields -e dns.qry.name -e dns.resp
 You can also do this with a capture file, as shown below:
 
 ```bash
-tshark -r capture.pcap -Y http.request -T fields -e http.host -e ip.dst -e http.request.full_uri
+tshark -r "$pcap_file" -Y http.request -T fields -e http.host -e ip.dst -e http.request.full_uri
 ```
 
 ### Analyzing Specific Protocols (HTTP, SSL/TLS)
@@ -111,7 +111,7 @@ tshark -i "$interface" -Y 'http.request.method == POST and tcp contains "passwor
 The following command extracts the source IP, destination IP, and the Server Name Indication (SNI) from Client Hello messages (handshake type 1). The SNI is particularly useful as it's often sent unencrypted, revealing the target domain even in encrypted traffic.
 
 ```bash
-tshark -n -r capture.pcap -Y 'ssl.handshake.type==1' -T fields -e ip.src -e ip.dst -e ssl.handshake.extensions_server_name
+tshark -n -r "$pcap_file" -Y 'ssl.handshake.type==1' -T fields -e ip.src -e ip.dst -e ssl.handshake.extensions_server_name
 ```
 
 ### Statistical Analysis
@@ -121,13 +121,13 @@ tshark can generate various statistics from captured traffic using the `-q` and 
 To get a breakdown of the protocols present in a capture file, you can use the following command:
 
 ```bash
-tshark -r HTTP_Traffic.pcap -q -z io,phs
+tshark -r "$pcap_file" -q -z io,phs
 ```
 
 tshark's output can be piped to standard Unix tools for further analysis (as you saw with `grep` before). For example, to count the occurrences of different HTTP User-Agent strings in a capture file:
 
 ```bash
-tshark -r example.pcap -Y http.request -T fields -e http.user_agent | sort | uniq -c | sort -rn | head -30
+tshark -r "$pcap_file" -Y http.request -T fields -e http.user_agent | sort | uniq -c | sort -rn | head -30
 ```
 
 This extracts user agents, sorts them, counts unique occurrences, sorts the counts in reverse numerical order, and shows the top 30.

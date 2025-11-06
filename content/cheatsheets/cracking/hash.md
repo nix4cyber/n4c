@@ -34,7 +34,7 @@ CyberChef can also be used to create hashes of different types.
 [Hashcat](https://hashcat.net/hashcat/) is a password recovery tool that can crack hashes using various methods, including brute force, dictionary attacks, and rule-based attacks. It supports a wide range of hash types and is highly optimized for performance.
 
 ```bash
-hashcat -m "$hash_type" -a "$attack_mode" "$hash_file" wordlist.txt
+hashcat -m "$hash_type" -a "$attack_mode" "$hash_file" "$wordlist"
 ```
 
 Additionally, you can use different flags and options to customize the attack. For example, you can use the `-r` flag to specify a rule file (only works with the dictionary attack), or the `-w` flag to set the workload profile (up to 4, where 4 is the highest and most aggressive). You can also use the `-O` flag to enable optimized kernel, which can speed up the cracking process for certain hash types but has limits with bigger passwords and can sometimes slow the cracking down. Finally, you can also use `--opencl-device-types 1,2` to use both your CPU and your GPU for cracking.
@@ -50,7 +50,7 @@ What's best to do is to test different combinations of arguments in the first ru
 - Bruteforce example:
 
 ```bash
-hashcat -m 500 hash.txt -a 3 "?1?1?1?1?1?1?1?1" --increment -1 "?l?d?u"
+hashcat -m 500 "$hash_file" -a 3 "?1?1?1?1?1?1?1?1" --increment -1 "?l?d?u"
 ```
 
 This command will try to crack the password using a brute-force attack with 8 characters, using lowercase letters, digits, and uppercase letters, as we can see with the ?l?d?u which are associated to the ?1 in the command.
@@ -66,7 +66,7 @@ john "$hash_file"
 - Examples:
 
 ```bash
-john --mask="?d?d?d?d" passwords.txt
+john --mask="?d?d?d?d" "$wordlist"
 ```
 
 This command will try to crack the password using a mask attack with 4 digits, ?d representing a digit in the mask.

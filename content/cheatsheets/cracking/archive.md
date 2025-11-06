@@ -13,7 +13,7 @@ seo:
 fcrackzip searches each given zipfile for encrypted files and tries to obtain the password. All files must be encrypted with the same password, and the more files you provide, the better.
 
 ```bash
-fcrackzip -u -D -p [wordlist] [ZIP file]
+fcrackzip -u -D -p "$wordlist" "$zipfile"
 ```
 
 The `-u` flag will try to decompress the first file by calling unzip with the guessed password. This weeds out false positives when not enough files have been given.
@@ -23,19 +23,19 @@ The `-p` flag will set initial (starting) password for brute-force searching to 
 - Examples :
 
 ```bash
-fcrackzip -u -D -p /tmp/wordlists/passwords/password.txt archive.zip
+fcrackzip -u -D -p /tmp/wordlists/passwords/password.txt "$zipfile"
 ```
 
-Use the wordlist /tmp/wordlists/passwords/password.txt to try to crack the password.
+Uses the wordlist /tmp/wordlists/passwords/password.txt to try to crack the password.
 
 ```bash
-fcrackzip -c a -p aaaaaa sample.zip
+fcrackzip -l 4-8 -u "$zipfile"
 ```
 
-Checks the encrypted files in sample.zip for all lowercase 6 character passwords in the first place.
+Brute-forces a password with a length of 4 to 8 characters.
 
 ```bash
-fcrackzip --method cpmask --charset A --init AAAA test.ppm
+fcrackzip --method cpmask --charset A --init AAAA "$ppmfile"
 ```
 
 Checks the obscured image test.ppm for all four character passwords.
@@ -48,15 +48,15 @@ Checks the obscured image test.ppm for all four character passwords.
 If the password is different between the files in the archive, then it will not work.
 
 ```bash
-zip2hashcat archive.zip > hash.txt
+zip2hashcat "$zipfile" > "$hashfile"
 ```
 
 Same for `rar2hashcat` and `7z2hashcat`.
 
 ### zip2john
 
-Same thing for [John the Ripper](/cheatsheets/cracking/hash/#john-the-ripper)
+Like `zip2hashcat` but for [John the Ripper](/cheatsheets/cracking/hash/#john-the-ripper)
 
 ```bash
-zip2john archive.zip > hash.txt
+zip2john "$zipfile" > "$hashfile"
 ```

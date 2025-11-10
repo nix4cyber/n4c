@@ -1,3 +1,11 @@
+.container:has(> .overwrite) {
+  max-width: none !important;
+}
+
+.list.section .content {
+  padding: 0;
+}
+
 .footer {
   border-top: none !important;
 }

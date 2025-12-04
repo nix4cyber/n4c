@@ -179,6 +179,8 @@ use. To do this, we can use the following command:
 hcxpcapngtool -o "$hc22000_file" "$pcapng_file"
 ```
 
+Or use the Hashcat [Cap2Hashcat tool](https://hashcat.net/cap2hashcat/).
+
 Finally, we can use [`hashcat`](https://n4c.hadi.diy/cracking/hash.html#hashcat)
 to crack the hash. You will need to import the `cracking` module. You can use
 the following command to try to crack the hash using a wordlist and a rule file,

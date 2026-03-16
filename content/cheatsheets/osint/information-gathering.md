@@ -52,6 +52,7 @@ seo:
 |            | [IntelX](https://intelx.io/)                           |
 |            | [Oathnet](https://oathnet.org/)                        |
 | Phone      | [Epieos](https://epieos.com/)                          |
+| Instagram  | [Dumpor](https://dumpor.io/)                           |
 | Misc       | [Goosint](https://goosint.com/)                        |
 |            | [OSINT Framework](https://osintframework.com/)         |
 |            | [OSINT Dojo](https://osintdojo.com/)                   |

@@ -35,6 +35,7 @@ seo:
 |            | [BreachDirectory](https://breachdirectory.org/)        |
 |            | [LeakLookup](https://leak-lookup.com/search)           |
 |            | [IntelX](https://intelx.io/)                           |
+|            | [Genealogic.review](https://genealogic.review/)        |
 | SSID       | [Wigle](https://wigle.net/)                            |
 | Image      | [PimEyes](https://pimeyes.com/)                        |
 |            | [TinEye](https://tineye.com)                           |

@@ -18,6 +18,12 @@ seo:
   href="https://alike-lantern-72d.notion.site/Web-Application-Penetration-Testing-Checklist-4792d95add7d4ffd85dd50a5f50659c6"
   target="_blank">}}
 
+{{<link-card
+  title="(Sub)Domains take over"
+  description="A list of services and how to claim (sub)domain with dangling DNS records."
+  href="https://github.com/EdOverflow/can-i-take-over-xyz"
+  target="_blank">}}
+
 ## Wordlists
 
 {{<link-card

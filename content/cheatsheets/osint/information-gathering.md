@@ -37,7 +37,8 @@ seo:
 |            | [IntelX](https://intelx.io/)                           |
 |            | [Genealogic.review](https://genealogic.review/)        |
 | SSID       | [Wigle](https://wigle.net/)                            |
-| Image      | [PimEyes](https://pimeyes.com/)                        |
+| Image      | [PimEyes (faces)](https://pimeyes.com/)                |
+|            | [Lenso (faces)](https://lenso.ai)                      |
 |            | [TinEye](https://tineye.com)                           |
 |            | [Pic2Map (exif geolocation)](https://www.pic2map.com/) |
 | Username   | [DeHashed](https://dehashed.com/search)                |

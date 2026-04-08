@@ -38,6 +38,24 @@ The sock puppet should have no link between your personal information and the fa
   target="_blank">}}
 
 {{<link-card
+  title="Receive Sms Online"
+  description="Free SMS verification"
+  href="https://receive-sms-online.info"
+  target="_blank">}}
+
+{{<link-card
+  title="Receive Free Sms"
+  description="Free SMS verification"
+  href="https://receivefreesms.net"
+  target="_blank">}}
+
+{{<link-card
+  title="Receive Free Sms"
+  description="Free SMS verification"
+  href="https://receive-smss.com"
+  target="_blank">}}
+
+{{<link-card
   title="Online Sim"
   description="SMS verification with free tier"
   href="https://onlinesim.io/"

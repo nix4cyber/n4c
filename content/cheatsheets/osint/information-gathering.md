@@ -41,6 +41,7 @@ seo:
 |            | [Lenso (faces)](https://lenso.ai)                      |
 |            | [TinEye](https://tineye.com)                           |
 |            | [Pic2Map (exif geolocation)](https://www.pic2map.com/) |
+|            | [Metadata Remover Viewer (browser-local EXIF/IPTC/XMP)](https://metadataremover.ai/metadata-viewer) |
 | Username   | [DeHashed](https://dehashed.com/search)                |
 |            | [BreachDirectory](https://breachdirectory.org/)        |
 |            | [IntelX](https://intelx.io/)                           |
@@ -58,6 +59,8 @@ seo:
 | Misc       | [Goosint](https://goosint.com/)                        |
 |            | [OSINT Framework](https://osintframework.com/)         |
 |            | [OSINT Dojo](https://osintdojo.com/)                   |
+
+> Image metadata can be edited or removed; corroborate EXIF timestamps and GPS with other evidence.
 
 ## OSINT Frameworks
 
